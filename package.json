@@ -1,0 +1,38 @@
+{
+  "name": "trayecto",
+  "version": "1.0.0",
+  "description": "Consigna Final de PAV1 - Cátedra Campos/Trillnick.",
+  "main": "index.js",
+  "scripts": {
+    "bootstrap": "lerna bootstrap --use-workspaces",
+    "test": "lerna run test --since",
+    "new-version": "lerna version --conventional-commits --yes --ignore-changes '**/CHANGELOG.md'",
+    "diff": "lerna diff",
+    "commit": "npx git-cz",
+    "fix-mismatches": "npx syncpack fix-mismatches"
+  },
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/elosorulo/trayecto.git"
+  },
+  "author": "Manuel Strajman, Esteban Sagman, Leonel Lopez Sagman, Agustín Cotroneo.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elosorulo/trayecto/issues"
+  },
+  "homepage": "https://github.com/elosorulo/trayecto#readme",
+  "devDependencies": {
+    "git-cz": "^4.7.5",
+    "lerna": "^3.22.1",
+    "syncpack": "^5.6.10"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
