@@ -26,7 +26,7 @@ const usePlayerControls = () => {
 }
 
 export const Player = (props) => {
-  const [ref, api] = useSphere(() => ({ mass: 1, type: "Dynamic", position: [0, 10, 0], ...props }))
+  const [ref, api] = useSphere(() => ({ mass: 1, type: "Dynamic", position: [0, 10, 0], args: 0.25, ...props }))
   const { forward, backward, left, right, jump } = usePlayerControls()
   const { camera } = useThree()
   const velocity = useRef([0, 0, 0])
@@ -39,5 +39,5 @@ export const Player = (props) => {
     api.velocity.set(direction.x, velocity.current[1], direction.z)
     if (jump && Math.abs(velocity.current[1].toFixed(2)) < 0.05) api.velocity.set(velocity.current[0], 10, velocity.current[2])
   })
-  return <mesh ref={ref} />
+  return <mesh ref={ref} scale={[0.5, 0.5, 0.5]}/>
 }

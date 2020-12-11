@@ -1,24 +1,49 @@
 import React from "react"
 import { Canvas } from "react-three-fiber"
-import { Sky, PointerLockControls } from "@react-three/drei"
+import { Sky, PointerLockControls, OrbitControls } from "@react-three/drei"
 import { Physics } from "@react-three/cannon"
 import { Ground } from "./Ground"
 import { Player } from "./Player"
 import { Cube, Cubes } from "./Cube"
+import { Environment } from  '@react-three/drei';
+import AmbientLightProvider from './components/providers/AmbientLightProvider';
+import SpotLightsProvider from './components/providers/SpotLightsProvider';
+import PlanesProvider from './components/providers/PlanesProvider';
+import Sequencer from './components/Sequencer';
+import Effects from './components/Effects';
+import { useSoundsApi } from './components/Sound';
+import './app.css';
+import EspacioInicialPuertaInteriorBajoNI from './components/3d/modules/EspacioInicialPuertaInteriorBajoNI';
+import EspacioInicialEsquinaCierreInteriorBajoNI from './components/3d/modules/EspacioInicialEsquinaCierreInteriorBajoNI';
+import ModuloCompuestoPuertaInteriorBajo from "./components/3d/modules/composite/ModuloCompuestoPuertaInteriorBajo"
 
-export default function App() {
-  return (
-    <Canvas shadowMap gl={{ alpha: false }} camera={{ fov: 35 }}>
-      <Sky sunPosition={[100, 10, 100]} />
-      <ambientLight intensity={0.3} />
-      <pointLight castShadow intensity={0.8} position={[100, 100, 100]} />
-      <Physics gravity={[0, -30, 0]}>
-        <Ground />
+const CharacterControls = (props) => {
+    return (
+      <>
         <Player />
-        <Cube position={[0, 0.5, -10]} />
-        <Cubes />
+        <PointerLockControls/>
+      </>
+    );
+};
+
+export default function App(props) {
+  
+  const soundsApi = useSoundsApi();
+
+  return (
+    <Canvas style={{height: "100vh", width: "100%"}} shadowMap gl={{ alpha: false }} camera={{ fov: 90 }}>
+        <Physics gravity={[0, -30, 0]}>
+          <CharacterControls/>
+          <React.Suspense fallback={null}>
+            <Environment background={true} files={['sky-1.png', 'sky-2.png', 'sky-3.png', 'sky-4.png', 'sky-5.png', 'sky-6.png']} path={'/'} />
+          </React.Suspense>
+          <SpotLightsProvider/>
+          <AmbientLightProvider/>
+          <PlanesProvider/>
+          <Sequencer soundsApi={soundsApi}/>
+          {[0, 1, 2, 3, 4].map(x => <ModuloCompuestoPuertaInteriorBajo key={x} position={[x * 6, 0, 0]}/>)}
+          <Effects/>
       </Physics>
-      <PointerLockControls />
     </Canvas>
   )
 }
