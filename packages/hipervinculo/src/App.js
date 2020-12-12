@@ -19,6 +19,9 @@ import ModuloCompuestoParedInteriorBajo from "./components/3d/modules/composite/
 import ModuloCompuestoEsquinaCerradaInteriorBajo from "./components/3d/modules/composite/ModuloCompuestoEsquinaCerradaInteriorBajo";
 import ModuloCompuestoTechoInteriorBajo from "./components/3d/modules/composite/ModuloCompuestoTechoInteriorBajo";
 import ModuloCompuestoEsquinaAbiertaInteriorBajo from "./components/3d/modules/composite/ModuloCompuestoEsquinaAbiertaInteriorBajo";
+import ModuloCompuestoEscaleras from "./components/3d/modules/composite/ModuloCompuestoEscalerasSuperiorDerecha";
+import ModuloCompuestoCaminitoEscaleras from "./components/3d/modules/composite/ModuloCompuestoCaminitoEscaleras"
+
 const CharacterControls = (props) => {
     return (
       <>
@@ -33,7 +36,6 @@ const RecorridoPrueba = () => {
     <>
       <ModuloCompuestoEsquinaCerradaInteriorBajo position={[0, 0, 0]}/>
       <ModuloCompuestoParedInteriorBajo position={[6, 0 ,0]} rotation={[0, Math.PI * 1.5, 0]}/>
-      
       <ModuloCompuestoParedInteriorBajo position={[0, 0 ,6]}/>
       <ModuloCompuestoTechoInteriorBajo position={[6, 0, 6]}/>
       <ModuloCompuestoPuertaInteriorBajo position={[0, 0, 12]}/>
@@ -41,6 +43,17 @@ const RecorridoPrueba = () => {
       <ModuloCompuestoEsquinaAbiertaInteriorBajo position={[12, 0, 0]} />
     </>      
   );
+};
+
+const RecorridoEscaleras = () => {
+  return (
+    <>
+      <ModuloCompuestoParedInteriorBajo/>
+      <ModuloCompuestoEscaleras position={[-6, 0, 0]}/>
+      <ModuloCompuestoCaminitoEscaleras position={[-6, 0, -6]} rotation={[0, 0, 0]}/>
+      <ModuloCompuestoEscaleras position={[-6, 0, -12]} rotation={[0, Math.PI * 1, 0]}/>
+    </>
+  )
 };
 
 export default function App(props) {
@@ -58,8 +71,8 @@ export default function App(props) {
           <AmbientLightProvider/>
           <PlanesProvider/>
           <Sequencer soundsApi={soundsApi}/>
-          <RecorridoPrueba/>
           <Effects/>
+          <RecorridoPrueba></RecorridoPrueba>
       </Physics>
     </Canvas>
   )

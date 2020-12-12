@@ -6,7 +6,7 @@ import { useGLTF } from '@react-three/drei/useGLTF'
 
 export default function Model(props) {
   const group = useRef()
-  const { nodes, materials } = useGLTF('/EspacioInicialEscaleraExteriorNI.gltf')
+  const { nodes, materials } = useGLTF('/EspacioInicialEscaleraExteriorG.gltf')
   return (
     <group ref={group} {...props} dispose={null}>
       <mesh material={materials['el que va']} geometry={nodes.Escalera15.geometry} userData={{ name: 'Escalera.15' }} />
@@ -14,4 +14,4 @@ export default function Model(props) {
   )
 }
 
-useGLTF.preload('/EspacioInicialEscaleraExteriorNI.gltf')
+useGLTF.preload('/EspacioInicialEscaleraExteriorG.gltf')
