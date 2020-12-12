@@ -13,10 +13,12 @@ import Sequencer from './components/Sequencer';
 import Effects from './components/Effects';
 import { useSoundsApi } from './components/Sound';
 import './app.css';
-import EspacioInicialPuertaInteriorBajoNI from './components/3d/modules/EspacioInicialPuertaInteriorBajoNI';
-import EspacioInicialEsquinaCierreInteriorBajoNI from './components/3d/modules/EspacioInicialEsquinaCierreInteriorBajoNI';
-import ModuloCompuestoPuertaInteriorBajo from "./components/3d/modules/composite/ModuloCompuestoPuertaInteriorBajo"
 
+import ModuloCompuestoPuertaInteriorBajo from "./components/3d/modules/composite/ModuloCompuestoPuertaInteriorBajo"
+import ModuloCompuestoParedInteriorBajo from "./components/3d/modules/composite/ModuloCompuestoParedInteriorBajo"
+import ModuloCompuestoEsquinaCerradaInteriorBajo from "./components/3d/modules/composite/ModuloCompuestoEsquinaCerradaInteriorBajo";
+import ModuloCompuestoTechoInteriorBajo from "./components/3d/modules/composite/ModuloCompuestoTechoInteriorBajo";
+import ModuloCompuestoEsquinaAbiertaInteriorBajo from "./components/3d/modules/composite/ModuloCompuestoEsquinaAbiertaInteriorBajo";
 const CharacterControls = (props) => {
     return (
       <>
@@ -24,6 +26,21 @@ const CharacterControls = (props) => {
         <PointerLockControls/>
       </>
     );
+};
+
+const RecorridoPrueba = () => {
+  return (
+    <>
+      <ModuloCompuestoEsquinaCerradaInteriorBajo position={[0, 0, 0]}/>
+      <ModuloCompuestoParedInteriorBajo position={[6, 0 ,0]} rotation={[0, Math.PI * 1.5, 0]}/>
+      
+      <ModuloCompuestoParedInteriorBajo position={[0, 0 ,6]}/>
+      <ModuloCompuestoTechoInteriorBajo position={[6, 0, 6]}/>
+      <ModuloCompuestoPuertaInteriorBajo position={[0, 0, 12]}/>
+      <ModuloCompuestoTechoInteriorBajo position={[6, 0, 12]}/>
+      <ModuloCompuestoEsquinaAbiertaInteriorBajo position={[12, 0, 0]} />
+    </>      
+  );
 };
 
 export default function App(props) {
@@ -41,7 +58,7 @@ export default function App(props) {
           <AmbientLightProvider/>
           <PlanesProvider/>
           <Sequencer soundsApi={soundsApi}/>
-          {[0, 1, 2, 3, 4].map(x => <ModuloCompuestoPuertaInteriorBajo key={x} position={[x * 6, 0, 0]}/>)}
+          <RecorridoPrueba/>
           <Effects/>
       </Physics>
     </Canvas>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import EspacioInicialCuboG from '../../EspacioInicialCuboG';
+import EspacioInicialCuboG from '../../bubbles/espacioInicial/EspacioInicialCuboG';
 
 const PisoCompuesto = (props) => {
     return (
