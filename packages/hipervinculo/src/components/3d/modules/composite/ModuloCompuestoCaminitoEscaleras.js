@@ -1,6 +1,6 @@
 import React from 'react';
 
-import EspacioInicialCuboG from '../bubbles/espacioInicial/EspacioInicialCuboG';
+import ModuloCuboG from '../bubbles/ModuloCuboG';
 import { useCompoundBody } from '@react-three/cannon';
 
 const ModuloCompuestoCaminitoEscaleras = (props) => {
@@ -20,10 +20,10 @@ const ModuloCompuestoCaminitoEscaleras = (props) => {
     ));
 
     return (
-        <group ref={ref} {...props} position={props.position} dispose={null}>
-            <EspacioInicialCuboG position={[0, 0, -2]}/>
-            <EspacioInicialCuboG position={[0, 0, 0]}/>
-            <EspacioInicialCuboG position={[0, 0, 2]}/>
+        <group ref={ref} {...props} dispose={null}>
+            <ModuloCuboG position={[0, 0, -2]} currentBubble={props.currentBubble}/>
+            <ModuloCuboG position={[0, 0, 0]} currentBubble={props.currentBubble}/>
+            <ModuloCuboG position={[0, 0, 2]} currentBubble={props.currentBubble}/>
         </group>
     )
 };

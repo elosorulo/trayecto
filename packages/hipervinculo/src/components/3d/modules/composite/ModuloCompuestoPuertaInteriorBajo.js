@@ -1,11 +1,11 @@
 import React from 'react';
-import EspacioInicialPuertaInteriorBajoNI from '../bubbles/espacioInicial/EspacioInicialPuertaInteriorBajoNI';
-import EspacioInicialPuertaExteriorNI from '../bubbles/espacioInicial/EspacioInicialPuertaExteriorNI';
-import EspacioInicialPuertaExteriorNS from '../bubbles/espacioInicial/EspacioInicialPuertaExteriorNS';
-import EspacioInicialParedInteriorBajoNI from '../bubbles/espacioInicial/EspacioInicialParedInteriorBajoNI';
-import EspacioInicialParedExteriorNI from '../bubbles/espacioInicial/EspacioInicialParedExteriorNI';
-import EspacioInicialParedExteriorNS from '../bubbles/espacioInicial/EspacioInicialParedExteriorNS';
-import EspacioInicialCuboG from '../bubbles/espacioInicial/EspacioInicialCuboG';
+import ModuloPuertaInteriorBajoNI from '../bubbles/ModuloPuertaInteriorBajoNI';
+import ModuloPuertaExteriorNI from '../bubbles/ModuloPuertaExteriorNI';
+import ModuloPuertaExteriorNS from '../bubbles/ModuloPuertaExteriorNS';
+import ModuloParedInteriorBajoNI from '../bubbles/ModuloParedInteriorBajoNI';
+import ModuloParedExteriorNI from '../bubbles/ModuloParedExteriorNI';
+import ModuloParedExteriorNS from '../bubbles/ModuloParedExteriorNS';
+import ModuloCuboG from '../bubbles/ModuloCuboG';
 import PisoCompuesto from './common/PisoCompuesto';
 import { useBox, useCompoundBody } from '@react-three/cannon';
 
@@ -42,23 +42,22 @@ const ModuloCompuestoPuertaInteriorBajo = (props) => {
     return (
         <group ref={ref} {...props} dispose={null}>
             {/**--- Piso ---*/}
-            <PisoCompuesto position={[0, -2, 0]}/>
-            <EspacioInicialParedExteriorNI position={[0, 0, -2]}/>
-            <EspacioInicialParedInteriorBajoNI position={[2, 0, -2]}/>
-            <EspacioInicialParedExteriorNS position={[0, 2, -2]}/>
+            <PisoCompuesto position={[0, -2, 0]} currentBubble={props.currentBubble}/>
+            <ModuloParedExteriorNI position={[0, 0, -2]} currentBubble={props.currentBubble}/>
+            <ModuloParedInteriorBajoNI position={[2, 0, -2]} currentBubble={props.currentBubble}/>
+            <ModuloParedExteriorNS position={[0, 2, -2]} currentBubble={props.currentBubble}/>
 
-            <EspacioInicialCuboG position={[2, 2, -2]}/>
+            <ModuloCuboG position={[2, 2, -2]} currentBubble={props.currentBubble}/>
 
-            <EspacioInicialPuertaExteriorNI position={[0, 0, 0]}/>
-            <EspacioInicialPuertaExteriorNS position={[0, 2, 0]}/>
-            <EspacioInicialPuertaInteriorBajoNI position={[2, 0, 0]}/>
-            <EspacioInicialParedExteriorNI position={[0, 2, 0]}/>
-            <EspacioInicialCuboG position={[2, 2, 0]}/>
+            <ModuloPuertaExteriorNI position={[0, 0, 0]} currentBubble={props.currentBubble}/>
+            <ModuloPuertaExteriorNS position={[0, 2, 0]} currentBubble={props.currentBubble}/>
+            <ModuloPuertaInteriorBajoNI position={[2, 0, 0]} currentBubble={props.currentBubble}/>
+            <ModuloCuboG position={[2, 2, 0]} currentBubble={props.currentBubble}/>
 
-            <EspacioInicialParedInteriorBajoNI position={[2, 0, 2]}/>
-            <EspacioInicialParedExteriorNI position={[0, 0, 2]}/>
-            <EspacioInicialParedExteriorNS position={[0, 2, 2]}/>
-            <EspacioInicialCuboG position={[2, 2, 2]}/>
+            <ModuloParedInteriorBajoNI position={[2, 0, 2]} currentBubble={props.currentBubble}/>
+            <ModuloParedExteriorNI position={[0, 0, 2]} currentBubble={props.currentBubble}/>
+            <ModuloParedExteriorNS position={[0, 2, 2]} currentBubble={props.currentBubble}/>
+            <ModuloCuboG position={[2, 2, 2]} currentBubble={props.currentBubble}/>
         </group>
     )
 };

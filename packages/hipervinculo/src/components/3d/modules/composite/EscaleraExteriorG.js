@@ -1,9 +1,9 @@
 import React from 'react';
 import { Ground } from '../../../../Ground';
-import EspacioInicialEscaleraExteriorG from '../bubbles/espacioInicial/EspacioInicialEscaleraExteriorG';
+import ModuloEscaleraExteriorG from '../bubbles/ModuloEscaleraExteriorG';
 import { useCompoundBody } from '@react-three/cannon';
 
-const EscaleraExteriorG = React.forwardRef((props, ref) => {
+const EscaleraExteriorG = props => {
     
     const [stairRef] = useCompoundBody(() => (
         {
@@ -60,15 +60,13 @@ const EscaleraExteriorG = React.forwardRef((props, ref) => {
                 }
             ]
         }
-    ), ref);
-
-    console.log(props)
+    ));
 
     return (
-        <group ref={stairRef} position={props.absPosition ? props.absPosition : props.position} rotation={props.absRotation ? props.absRotation : props.rotation}>
-            <EspacioInicialEscaleraExteriorG/>   
+        <group position={props.position} rotation={props.rotation}>
+            <ModuloEscaleraExteriorG currentBubble={props.currentBubble}/>   
         </group>
     )
-});
+};
 
 export default EscaleraExteriorG;

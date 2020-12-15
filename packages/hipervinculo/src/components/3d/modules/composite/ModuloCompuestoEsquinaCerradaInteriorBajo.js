@@ -1,9 +1,9 @@
 import React from 'react';
-import EspacioInicialEsquinaCierreInteriorBajoNI from '../bubbles/espacioInicial/EspacioInicialEsquinaCierreInteriorBajoNI';
-import EspacioInicialEsquinaAperturaExteriorG from '../bubbles/espacioInicial/EspacioInicialEsquinaAperturaExteriorG';
-import EspacioInicialParedExteriorNI from '../bubbles/espacioInicial/EspacioInicialParedExteriorNI';
-import EspacioInicialParedExteriorNS from '../bubbles/espacioInicial/EspacioInicialParedExteriorNS';
-import EspacioInicialCuboG from '../bubbles/espacioInicial/EspacioInicialCuboG';
+import ModuloEsquinaCierreInteriorBajoNI from '../bubbles/ModuloEsquinaCierreInteriorBajoNI';
+import ModuloEsquinaAperturaExteriorG from '../bubbles/ModuloEsquinaAperturaExteriorG';
+import ModuloParedExteriorNI from '../bubbles/ModuloParedExteriorNI';
+import ModuloParedExteriorNS from '../bubbles/ModuloParedExteriorNS';
+import ModuloCuboG from '../bubbles/ModuloCuboG';
 import PisoCompuesto from './common/PisoCompuesto';
 import { useBox, useCompoundBody } from '@react-three/cannon';
 
@@ -51,19 +51,19 @@ const ModuloCompuestoEsquinaCerradaInteriorBajo = (props) => {
     return (
         <group ref={ref} {...props} position={props.position} dispose={null}>
             {/**--- Piso ---*/}
-            <PisoCompuesto position={[0, -2, 0]}/>
-            <EspacioInicialParedExteriorNI position={[2, 0, 0]} rotation={[0, 1.5 * Math.PI, 0]}/>
-            <EspacioInicialParedExteriorNS position={[2, 2, 0]} rotation={[0, 1.5 * Math.PI, 0]}/>
+            <PisoCompuesto position={[0, -2, 0]} currentBubble={props.currentBubble}/>
+            <ModuloParedExteriorNI position={[2, 0, 0]} rotation={[0, 1.5 * Math.PI, 0]} currentBubble={props.currentBubble}/>
+            <ModuloParedExteriorNS position={[2, 2, 0]} rotation={[0, 1.5 * Math.PI, 0]} currentBubble={props.currentBubble}/>
             
-            <EspacioInicialEsquinaAperturaExteriorG position={[0, 0, 0]} rotation={[0, 1.5 * Math.PI, 0]}/>
-            <EspacioInicialEsquinaAperturaExteriorG position={[0, 2, 0]} rotation={[0, 1.5 * Math.PI, 0]}/>
+            <ModuloEsquinaAperturaExteriorG position={[0, 0, 0]} rotation={[0, 1.5 * Math.PI, 0]} currentBubble={props.currentBubble}/>
+            <ModuloEsquinaAperturaExteriorG position={[0, 2, 0]} rotation={[0, 1.5 * Math.PI, 0]} currentBubble={props.currentBubble}/>
 
-            <EspacioInicialEsquinaCierreInteriorBajoNI position={[2, 0, 2]}/>
+            <ModuloEsquinaCierreInteriorBajoNI position={[2, 0, 2]} currentBubble={props.currentBubble}/>
             
-            <EspacioInicialParedExteriorNI position={[0, 0, 2]}/>
-            <EspacioInicialParedExteriorNS position={[0, 2, 2]}/>
+            <ModuloParedExteriorNI position={[0, 0, 2]} currentBubble={props.currentBubble}/>
+            <ModuloParedExteriorNS position={[0, 2, 2]} currentBubble={props.currentBubble}/>
             
-            <EspacioInicialCuboG position={[2, 2, 2]}/>
+            <ModuloCuboG position={[2, 2, 2]} currentBubble={props.currentBubble}/>
         </group>
     )
 };

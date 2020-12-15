@@ -1,8 +1,8 @@
 import React from 'react';
-import EspacioInicialCuboG from '../bubbles/espacioInicial/EspacioInicialCuboG';
+import ModuloCuboG from '../bubbles/ModuloCuboG';
 import PisoCompuesto from './common/PisoCompuesto';
 import { useBox, useCompoundBody } from '@react-three/cannon';
-import EspacioInicialTechoInteriorBajoNS from '../bubbles/espacioInicial/EspacioInicialTechoInteriorBajoNI';
+import ModuloTechoInteriorBajoNS from '../bubbles/ModuloTechoInteriorBajoNI';
 
 const ModuloCompuestoTechoInteriorBajo = (props) => {
 
@@ -27,26 +27,26 @@ const ModuloCompuestoTechoInteriorBajo = (props) => {
     return (
         <group ref={ref} {...props} position={props.position} dispose={null}>
             {/**--- Piso ---*/}
-            <PisoCompuesto position={[0, -2, 0]}/>
-            <EspacioInicialTechoInteriorBajoNS position={[-2, 0, -2]}/>
-            <EspacioInicialTechoInteriorBajoNS position={[-2, 0, 0]}/>
-            <EspacioInicialTechoInteriorBajoNS position={[-2, 0, 2]}/>
-            <EspacioInicialTechoInteriorBajoNS position={[0, 0, -2]}/>
-            <EspacioInicialTechoInteriorBajoNS position={[0, 0, 0]}/>
-            <EspacioInicialTechoInteriorBajoNS position={[0, 0, 2]}/>
-            <EspacioInicialTechoInteriorBajoNS position={[2, 0, -2]}/>
-            <EspacioInicialTechoInteriorBajoNS position={[2, 0, 0]}/>
-            <EspacioInicialTechoInteriorBajoNS position={[2, 0, 2]}/>
+            <PisoCompuesto position={[0, -2, 0]} currentBubble={props.currentBubble}/>
+            <ModuloTechoInteriorBajoNS position={[-2, 0, -2]} currentBubble={props.currentBubble}/>
+            <ModuloTechoInteriorBajoNS position={[-2, 0, 0]} currentBubble={props.currentBubble}/>
+            <ModuloTechoInteriorBajoNS position={[-2, 0, 2]} currentBubble={props.currentBubble}/>
+            <ModuloTechoInteriorBajoNS position={[0, 0, -2]} currentBubble={props.currentBubble}/>
+            <ModuloTechoInteriorBajoNS position={[0, 0, 0]} currentBubble={props.currentBubble}/>
+            <ModuloTechoInteriorBajoNS position={[0, 0, 2]} currentBubble={props.currentBubble}/>
+            <ModuloTechoInteriorBajoNS position={[2, 0, -2]} currentBubble={props.currentBubble}/>
+            <ModuloTechoInteriorBajoNS position={[2, 0, 0]} currentBubble={props.currentBubble}/>
+            <ModuloTechoInteriorBajoNS position={[2, 0, 2]} currentBubble={props.currentBubble}/>
 
-            <EspacioInicialCuboG position={[-2, 2, -2]}/>
-            <EspacioInicialCuboG position={[-2, 2, 0]}/>
-            <EspacioInicialCuboG position={[-2, 2, 2]}/>
-            <EspacioInicialCuboG position={[0, 2, -2]}/>
-            <EspacioInicialCuboG position={[0, 2, 0]}/>
-            <EspacioInicialCuboG position={[0, 2, 2]}/>
-            <EspacioInicialCuboG position={[2, 2, -2]}/>
-            <EspacioInicialCuboG position={[2, 2, 0]}/>
-            <EspacioInicialCuboG position={[2, 2, 2]}/>
+            <ModuloCuboG position={[-2, 2, -2]} currentBubble={props.currentBubble}/>
+            <ModuloCuboG position={[-2, 2, 0]} currentBubble={props.currentBubble}/>
+            <ModuloCuboG position={[-2, 2, 2]} currentBubble={props.currentBubble}/>
+            <ModuloCuboG position={[0, 2, -2]} currentBubble={props.currentBubble}/>
+            <ModuloCuboG position={[0, 2, 0]} currentBubble={props.currentBubble}/>
+            <ModuloCuboG position={[0, 2, 2]} currentBubble={props.currentBubble}/>
+            <ModuloCuboG position={[2, 2, -2]} currentBubble={props.currentBubble}/>
+            <ModuloCuboG position={[2, 2, 0]} currentBubble={props.currentBubble}/>
+            <ModuloCuboG position={[2, 2, 2]} currentBubble={props.currentBubble}/>
         </group>
     )
 };

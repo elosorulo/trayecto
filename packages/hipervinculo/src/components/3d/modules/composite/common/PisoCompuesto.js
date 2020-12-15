@@ -1,19 +1,19 @@
 import React from 'react';
 
-import EspacioInicialCuboG from '../../bubbles/espacioInicial/EspacioInicialCuboG';
+import ModuloCuboG from '../../bubbles/ModuloCuboG';
 
 const PisoCompuesto = (props) => {
     return (
         <group {...props} dispose={null}>
-            <EspacioInicialCuboG position={[-2, 0, -2]}/>
-            <EspacioInicialCuboG position={[0, 0, -2]}/>
-            <EspacioInicialCuboG position={[2, 0, -2]}/>
-            <EspacioInicialCuboG position={[-2, 0, 0]}/>
-            <EspacioInicialCuboG position={[0, 0, 0]}/>
-            <EspacioInicialCuboG position={[2, 0, 0]}/>
-            <EspacioInicialCuboG position={[-2, 0, 2]}/>
-            <EspacioInicialCuboG position={[0, 0, 2]}/>
-            <EspacioInicialCuboG position={[2, 0, 2]}/>
+            <ModuloCuboG position={[-2, 0, -2]} currentBubble={props.currentBubble}/>
+            <ModuloCuboG position={[0, 0, -2]} currentBubble={props.currentBubble}/>
+            <ModuloCuboG position={[2, 0, -2]} currentBubble={props.currentBubble}/>
+            <ModuloCuboG position={[-2, 0, 0]} currentBubble={props.currentBubble}/>
+            <ModuloCuboG position={[0, 0, 0]} currentBubble={props.currentBubble}/>
+            <ModuloCuboG position={[2, 0, 0]} currentBubble={props.currentBubble}/>
+            <ModuloCuboG position={[-2, 0, 2]} currentBubble={props.currentBubble}/>
+            <ModuloCuboG position={[0, 0, 2]} currentBubble={props.currentBubble}/>
+            <ModuloCuboG position={[2, 0, 2]} currentBubble={props.currentBubble}/>
         </group>
     );
 };

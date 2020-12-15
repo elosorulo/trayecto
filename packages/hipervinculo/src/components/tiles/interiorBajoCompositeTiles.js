@@ -30,7 +30,7 @@ _X@
 ___`
     ],
     params: { transforms: [], weight: 20},
-    component: (props) => { return (<ModuloCompuestoEsquinaCerradaInteriorBajo position={props.position} /> )}
+    component: (props) => { return (<ModuloCompuestoEsquinaCerradaInteriorBajo {...props} /> )}
 }
 
 
@@ -51,7 +51,7 @@ ___
 `
     ],
     params: { transforms: [], weight: 20},
-    component: (props) => { return (<ModuloCompuestoEsquinaCerradaInteriorBajo position={props.position} rotation={[0, 0.5 * Math.PI, 0]}/> )}
+    component: (props) => { return (<ModuloCompuestoEsquinaCerradaInteriorBajo {...props} rotation={[0, 0.5 * Math.PI, 0]}/> )}
 }
 
 const EsquinaCerradaInteriorBajoTiles180 = {
@@ -70,7 +70,7 @@ ___
 ___`
     ],
     params: { transforms: [], weight: 20},
-    component: (props) => { return (<ModuloCompuestoEsquinaCerradaInteriorBajo position={props.position} rotation={[0, Math.PI, 0]}/> )}
+    component: (props) => { return (<ModuloCompuestoEsquinaCerradaInteriorBajo {...props} rotation={[0, Math.PI, 0]}/> )}
 }
 
 const EsquinaCerradaInteriorBajoTiles270 = {
@@ -89,7 +89,7 @@ ___
 ___`
     ],
     params: { transforms: [], weight: 20},
-    component: (props) => { return (<ModuloCompuestoEsquinaCerradaInteriorBajo position={props.position} rotation={[0, 1.5 * Math.PI, 0]}/> )}
+    component: (props) => { return (<ModuloCompuestoEsquinaCerradaInteriorBajo {...props} rotation={[0, 1.5 * Math.PI, 0]}/> )}
 }
 
 // Esquina Abierta
@@ -111,7 +111,7 @@ ___
 ___`
     ],
     params: { transforms: [], weight: 20},
-    component: (props) => { return (<ModuloCompuestoEsquinaAbiertaInteriorBajo position={props.position} /> )}
+    component: (props) => { return (<ModuloCompuestoEsquinaAbiertaInteriorBajo {...props} /> )}
 }
 
 
@@ -131,7 +131,7 @@ _X@
 ___`
     ],
     params: { transforms: [], weight: 20},
-    component: (props) => { return (<ModuloCompuestoEsquinaAbiertaInteriorBajo position={props.position} rotation={[0, 0.5 * Math.PI, 0]}/> )}
+    component: (props) => { return (<ModuloCompuestoEsquinaAbiertaInteriorBajo {...props} rotation={[0, 0.5 * Math.PI, 0]}/> )}
 }
 
 const EsquinaAbiertaInteriorBajoTiles180 = {
@@ -150,7 +150,7 @@ ___
 ___`
     ],
     params: { transforms: [], weight: 20},
-    component: (props) => { return (<ModuloCompuestoEsquinaAbiertaInteriorBajo position={props.position} rotation={[0, Math.PI, 0]}/> )}
+    component: (props) => { return (<ModuloCompuestoEsquinaAbiertaInteriorBajo {...props} rotation={[0, Math.PI, 0]}/> )}
 }
 
 const EsquinaAbiertaInteriorBajoTiles270 = {
@@ -169,7 +169,7 @@ ___
 ___`
     ],
     params: { transforms: [], weight: 20},
-    component: (props) => { return (<ModuloCompuestoEsquinaAbiertaInteriorBajo position={props.position} rotation={[0, 1.5 * Math.PI, 0]}/> )}
+    component: (props) => { return (<ModuloCompuestoEsquinaAbiertaInteriorBajo {...props} rotation={[0, 1.5 * Math.PI, 0]}/> )}
 }
 
 // Puerta
@@ -190,7 +190,7 @@ _x@
 ___`
     ],
     params: { transforms: [], weight: 100},
-    component: (props) => { return (<ModuloCompuestoPuertaInteriorBajo position={props.position} /> )}
+    component: (props) => { return (<ModuloCompuestoPuertaInteriorBajo {...props} /> )}
 }
 
 
@@ -210,7 +210,7 @@ _=_
 ___`
     ],
     params: { transforms: [], weight: 100},
-    component: (props) => { return (<ModuloCompuestoPuertaInteriorBajo position={props.position} rotation={[0, 0.5 * Math.PI, 0]}/> )}
+    component: (props) => { return (<ModuloCompuestoPuertaInteriorBajo {...props} rotation={[0, 0.5 * Math.PI, 0]}/> )}
 }
 
 const PuertaInteriorBajoTiles180 = {
@@ -229,7 +229,7 @@ ___
 ___`
     ],
     params: { transforms: [], weight: 100},
-    component: (props) => { return (<ModuloCompuestoPuertaInteriorBajo position={props.position} rotation={[0, Math.PI, 0]}/> )}
+    component: (props) => { return (<ModuloCompuestoPuertaInteriorBajo {...props} rotation={[0, Math.PI, 0]}/> )}
 }
 
 const PuertaInteriorBajoTiles270 = {
@@ -248,7 +248,7 @@ ___
 ___`
     ],
     params: { transforms: [], weight: 100},
-    component: (props) => { return (<ModuloCompuestoPuertaInteriorBajo position={props.position} rotation={[0, 1.5 * Math.PI, 0]}/> )}
+    component: (props) => { return (<ModuloCompuestoPuertaInteriorBajo {...props} rotation={[0, 1.5 * Math.PI, 0]}/> )}
 }
 
 
@@ -271,7 +271,7 @@ _x@
 ___`
 ],
     params: { transforms: [], weight: 20},
-    component: (props) => { return (<ModuloCompuestoParedInteriorBajo position={props.position} /> )}
+    component: (props) => { return (<ModuloCompuestoParedInteriorBajo {...props} /> )}
 }
 
 
@@ -291,7 +291,7 @@ ___
 ___`
 ],
     params: { transforms: [], weight: 20},
-    component: (props) => { return (<ModuloCompuestoParedInteriorBajo position={props.position} rotation={[0, 0.5 * Math.PI, 0]}/> )}
+    component: (props) => { return (<ModuloCompuestoParedInteriorBajo {...props} rotation={[0, 0.5 * Math.PI, 0]}/> )}
 }
 
 const ParedInteriorBajoTiles180 = {
@@ -310,7 +310,7 @@ ___
 ___`
 ],
     params: { transforms: [], weight: 20},
-    component: (props) => { return (<ModuloCompuestoParedInteriorBajo position={props.position} rotation={[0, Math.PI, 0]}/> )}
+    component: (props) => { return (<ModuloCompuestoParedInteriorBajo {...props} rotation={[0, Math.PI, 0]}/> )}
 }
 
 const ParedInteriorBajoTiles270 = {
@@ -328,7 +328,7 @@ ___
 ___`
 ],
     params: { transforms: [], weight: 20},
-    component: (props) => { return (<ModuloCompuestoParedInteriorBajo position={props.position} rotation={[0, 1.5 * Math.PI, 0]}/> )}
+    component: (props) => { return (<ModuloCompuestoParedInteriorBajo {...props} rotation={[0, 1.5 * Math.PI, 0]}/> )}
 }
 
 
@@ -348,7 +348,7 @@ ___
 ___`
     ],
     params: { transforms: [], weight: 20},
-    component: (props) => { return (<ModuloCompuestoTechoInteriorBajo position={props.position} rotation={[0, 1.5 * Math.PI, 0]}/> )}
+    component: (props) => { return (<ModuloCompuestoTechoInteriorBajo {...props} rotation={[0, 1.5 * Math.PI, 0]}/> )}
 }
 
 const tiles = [

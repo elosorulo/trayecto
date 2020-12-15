@@ -30,7 +30,7 @@ _#_
 ___`
     ],
     params: { transforms: [], weight: 20},
-    component: (props) => { return (<ModuloCompuestoCaminitoEscaleras position={props.position} /> )}
+    component: (props) => { return (<ModuloCompuestoCaminitoEscaleras {...props} /> )}
 }
 
 
@@ -51,7 +51,7 @@ ___
 `
     ],
     params: { transforms: [], weight: 20},
-    component: (props) => { return (<ModuloCompuestoCaminitoEscaleras position={props.position} rotation={[0, 0.5 * Math.PI, 0]}/> )}
+    component: (props) => { return (<ModuloCompuestoCaminitoEscaleras {...props} rotation={[0, 0.5 * Math.PI, 0]}/> )}
 }
 
 // Conector Escalera Inferior
@@ -72,7 +72,7 @@ ___
 ___`
     ],
     params: { transforms: [], weight: 20},
-    component: (props) => { return (<ModuloCompuestoConectorEscaleraInferior position={props.position} /> )}
+    component: (props) => { return (<ModuloCompuestoConectorEscaleraInferior {...props} /> )}
 }
 
 
@@ -93,7 +93,7 @@ ___
 `
     ],
     params: { transforms: [], weight: 20},
-    component: (props) => { return (<ModuloCompuestoConectorEscaleraInferior position={props.position} rotation={[0, 0.5 * Math.PI, 0]}/> )}
+    component: (props) => { return (<ModuloCompuestoConectorEscaleraInferior {...props} rotation={[0, 0.5 * Math.PI, 0]}/> )}
 }
 
 const ConectorEscaleraInferiorTiles180 = {
@@ -112,7 +112,7 @@ ___
 ___`
     ],
     params: { transforms: [], weight: 20},
-    component: (props) => { return (<ModuloCompuestoConectorEscaleraInferior position={props.position} rotation={[0, Math.PI, 0]}/> )}
+    component: (props) => { return (<ModuloCompuestoConectorEscaleraInferior {...props} rotation={[0, Math.PI, 0]}/> )}
 }
 
 const ConectorEscaleraInferiorTiles270 = {
@@ -131,7 +131,7 @@ _=_
 ___`
     ],
     params: { transforms: [], weight: 20},
-    component: (props) => { return (<ModuloCompuestoConectorEscaleraInferior position={props.position} rotation={[0, 1.5 * Math.PI, 0]}/> )}
+    component: (props) => { return (<ModuloCompuestoConectorEscaleraInferior {...props} rotation={[0, 1.5 * Math.PI, 0]}/> )}
 }
 
 
@@ -153,7 +153,7 @@ ___
 ___`
     ],
     params: { transforms: [], weight: 20},
-    component: (props) => { return (<ModuloCompuestoEscalerasInferiorIzquierda position={props.position} /> )}
+    component: (props) => { return (<ModuloCompuestoEscalerasInferiorIzquierda {...props} /> )}
 }
 
 
@@ -174,7 +174,7 @@ ___
 `
     ],
     params: { transforms: [], weight: 20},
-    component: (props) => { return (<ModuloCompuestoEscalerasInferiorIzquierda position={props.position} rotation={[0, 0.5 * Math.PI, 0]}/> )}
+    component: (props) => { return (<ModuloCompuestoEscalerasInferiorIzquierda {...props} rotation={[0, 0.5 * Math.PI, 0]}/> )}
 }
 
 const EscalerasInferiorIzquierdaTiles180 = {
@@ -193,7 +193,7 @@ ___
 ___`
     ],
     params: { transforms: [], weight: 20},
-    component: (props) => { return (<ModuloCompuestoEscalerasInferiorIzquierda position={props.position} rotation={[0, Math.PI, 0]}/> )}
+    component: (props) => { return (<ModuloCompuestoEscalerasInferiorIzquierda {...props} rotation={[0, Math.PI, 0]}/> )}
 }
 
 const EscalerasInferiorIzquierdaTiles270 = {
@@ -212,7 +212,7 @@ ___
 ___`
     ],
     params: { transforms: [], weight: 20},
-    component: (props) => { return (<ModuloCompuestoEscalerasInferiorIzquierda position={props.position} rotation={[0, 1.5 * Math.PI, 0]}/> )}
+    component: (props) => { return (<ModuloCompuestoEscalerasInferiorIzquierda {...props} rotation={[0, 1.5 * Math.PI, 0]}/> )}
 }
 
 
@@ -235,7 +235,7 @@ ___
 ___`
     ],
     params: { transforms: [], weight: 20},
-    component: (props) => { return (<ModuloCompuestoEscalerasInferiorDerecha position={props.position} /> )}
+    component: (props) => { return (<ModuloCompuestoEscalerasInferiorDerecha {...props} /> )}
 }
 
 
@@ -256,7 +256,7 @@ ___
 `
     ],
     params: { transforms: [], weight: 20},
-    component: (props) => { return (<ModuloCompuestoEscalerasInferiorDerecha position={props.position} rotation={[0, 0.5 * Math.PI, 0]}/> )}
+    component: (props) => { return (<ModuloCompuestoEscalerasInferiorDerecha {...props} rotation={[0, 0.5 * Math.PI, 0]}/> )}
 }
 
 const EscalerasInferiorDerechaTiles180 = {
@@ -275,7 +275,7 @@ ___
 ___`
     ],
     params: { transforms: [], weight: 20},
-    component: (props) => { return (<ModuloCompuestoEscalerasInferiorDerecha position={props.position} rotation={[0, Math.PI, 0]}/> )}
+    component: (props) => { return (<ModuloCompuestoEscalerasInferiorDerecha {...props} rotation={[0, Math.PI, 0]}/> )}
 }
 
 const EscalerasInferiorDerechaTiles270 = {
@@ -294,7 +294,7 @@ ___
 ___`
     ],
     params: { transforms: [], weight: 20},
-    component: (props) => { return (<ModuloCompuestoEscalerasInferiorDerecha position={props.position} rotation={[0, 1.5 * Math.PI, 0]}/> )}
+    component: (props) => { return (<ModuloCompuestoEscalerasInferiorDerecha {...props} rotation={[0, 1.5 * Math.PI, 0]}/> )}
 }
 
 
@@ -317,7 +317,7 @@ _#_
 ___`
     ],
     params: { transforms: [], weight: 20},
-    component: (props) => { return (<ModuloCompuestoEscalerasSuperiorIzquierda position={props.position} /> )}
+    component: (props) => { return (<ModuloCompuestoEscalerasSuperiorIzquierda {...props} /> )}
 }
 
 
@@ -338,7 +338,7 @@ ___
 `
     ],
     params: { transforms: [], weight: 20},
-    component: (props) => { return (<ModuloCompuestoEscalerasSuperiorIzquierda position={props.position} rotation={[0, 0.5 * Math.PI, 0]}/> )}
+    component: (props) => { return (<ModuloCompuestoEscalerasSuperiorIzquierda {...props} rotation={[0, 0.5 * Math.PI, 0]}/> )}
 }
 
 const EscalerasSuperiorIzquierdaTiles180 = {
@@ -357,7 +357,7 @@ ___
 ___`
     ],
     params: { transforms: [], weight: 20},
-    component: (props) => { return (<ModuloCompuestoEscalerasSuperiorIzquierda position={props.position} rotation={[0, Math.PI, 0]}/> )}
+    component: (props) => { return (<ModuloCompuestoEscalerasSuperiorIzquierda {...props} rotation={[0, Math.PI, 0]}/> )}
 }
 
 const EscalerasSuperiorIzquierdaTiles270 = {
@@ -376,7 +376,7 @@ _=_
 ___`
     ],
     params: { transforms: [], weight: 20},
-    component: (props) => { return (<ModuloCompuestoEscalerasSuperiorIzquierda position={props.position} rotation={[0, 1.5 * Math.PI, 0]}/> )}
+    component: (props) => { return (<ModuloCompuestoEscalerasSuperiorIzquierda {...props} rotation={[0, 1.5 * Math.PI, 0]}/> )}
 }
 
 
@@ -399,7 +399,7 @@ ___
 ___`
     ],
     params: { transforms: [], weight: 20},
-    component: (props) => { return (<ModuloCompuestoEscalerasSuperiorDerecha position={props.position} /> )}
+    component: (props) => { return (<ModuloCompuestoEscalerasSuperiorDerecha {...props} /> )}
 }
 
 
@@ -420,7 +420,7 @@ ___
 `
     ],
     params: { transforms: [], weight: 20},
-    component: (props) => { return (<ModuloCompuestoEscalerasSuperiorDerecha position={props.position} rotation={[0, 0.5 * Math.PI, 0]}/> )}
+    component: (props) => { return (<ModuloCompuestoEscalerasSuperiorDerecha {...props} rotation={[0, 0.5 * Math.PI, 0]}/> )}
 }
 
 const EscalerasSuperiorDerechaTiles180 = {
@@ -439,7 +439,7 @@ ___
 ___`
     ],
     params: { transforms: [], weight: 20},
-    component: (props) => { return (<ModuloCompuestoEscalerasSuperiorDerecha position={props.position} rotation={[0, Math.PI, 0]}/> )}
+    component: (props) => { return (<ModuloCompuestoEscalerasSuperiorDerecha {...props} rotation={[0, Math.PI, 0]}/> )}
 }
 
 const EscalerasSuperiorDerechaTiles270 = {
@@ -458,7 +458,7 @@ _=_
 ___`
     ],
     params: { transforms: [], weight: 20},
-    component: (props) => { return (<ModuloCompuestoEscalerasSuperiorDerecha position={props.position} rotation={[0, 1.5 * Math.PI, 0]}/> )}
+    component: (props) => { return (<ModuloCompuestoEscalerasSuperiorDerecha {...props} rotation={[0, 1.5 * Math.PI, 0]}/> )}
 }
 
 const tiles = [

@@ -1,10 +1,10 @@
 import create from 'zustand';
-import { LOBBY_BUBBLE } from './bubbles/bubblesConstants';
+import { CONTENT_BUBBLE, DEEP_WEB_BUBBLE, INFORMATIVE_BUBBLE, LOBBY_BUBBLE, PIRACY_BUBBLE, PORN_BUBBLE, SOCIAL_NETWORK_BUBBLE } from './bubbles/bubblesConstants';
 import storeReducer from './reducers/storeReducer';
 
 const RINGS_AMOUNT = 1;
 const DODECAHEDRONS_AMOUNT = 0;
-const SPHERES_AMOUNT = 38500;
+const SPHERES_AMOUNT = 0;
 const LATHES_AMOUNT = 0;
 const TETRAHEDRONS_AMOUNT = 0;
 const EMPTY = "EMPTY";
@@ -34,7 +34,7 @@ const initialState = {
   spheresAnimations: animation(SPHERES_AMOUNT),
   ringsAnimations: animation(RINGS_AMOUNT),
   waves: [],
-  currentBubble: LOBBY_BUBBLE
+  currentBubble: CONTENT_BUBBLE
 };
 
 export const [useStore, storeApi] = create(set => ({

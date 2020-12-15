@@ -25,16 +25,23 @@ const usePlayerControls = () => {
   return movement
 }
 
+const delta = 0.2;
+
 export const Player = (props) => {
 
-  const [position, setPosition] = useState([0, 100, 0]);
+  const [loading, setLoading] = useState(true);
+  const [position, setPosition] = useState([0, 30, 0]);
 
   const [ref, api] = useSphere(() => ({ mass: 1, type: "Dynamic", position: position, args: 0.6, ...props }))
   const { forward, backward, left, right, jump } = usePlayerControls()
   const { camera } = useThree()
   const velocity = useRef([0, 0, 0])
   useEffect(() => void api.velocity.subscribe((v) => (velocity.current = v)), [])
-  useFrame(() => {
+  useEffect(() => console.log(loading), [loading])
+  useFrame(() => {    
+    if(loading && (ref.current.position.y < (position[1] - delta))) {
+      setLoading(false)
+    }
     if(ref.current.position.y <= -30) {
       api.position.set(0, 30, 0)
     }

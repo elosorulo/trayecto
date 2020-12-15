@@ -9,10 +9,6 @@ import * as THREE from 'three';
 
 
 
-var targetPosition = new THREE.Vector3(); // create once an reuse it
-var targetRotation = new THREE.Quaternion();
-var eulerRotation = new THREE.Euler();
-
 var geometry = new THREE.BoxGeometry(2, 2, 2);
 const material = new THREE.MeshBasicMaterial( {color: 0x00ff00} );
 var mesh = new THREE.Mesh(geometry, material)
@@ -20,6 +16,10 @@ var group= new THREE.Group();
 
 const getRelativeStairPosition = (globalPosition, globalRotation) => (stairPosition, stairRotation) => {
 
+    var targetPosition = new THREE.Vector3(); // create once an reuse it
+    var targetRotation = new THREE.Quaternion();
+    var eulerRotation = new THREE.Euler();
+    
     group.add(mesh);
     mesh.position.set(stairPosition[0], stairPosition[1], stairPosition[2]);
     mesh.rotation.set(stairRotation[0], stairRotation[1], stairRotation[2]);
@@ -51,12 +51,9 @@ const ModuloCompuestoEscaleras = (props) => {
     ));
 
     return (
-        <>
-        <EscaleraExteriorG ref={ref} position={stairPosition} rotation={stairRotation} absPosition={stairCoordinates.position} absRotation={stairCoordinates.rotation}/>
-        <group ref={ref} {...props} position={props.position} dispose={null}>
-            
+        <group ref={ref} {...props}>
+            <EscaleraExteriorG currentBubble={props.currentBubble} position={stairPosition} rotation={stairRotation} absPosition={stairCoordinates.position} absRotation={stairCoordinates.rotation}/>
         </group>
-        </>
     )
 };
 
