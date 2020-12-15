@@ -1,8 +1,7 @@
 import React from 'react';
 
-import EspacioInicialEscaleraExteriorG from '../bubbles/espacioInicial/EspacioInicialEscaleraExteriorG';
 import EspacioInicialCuboG from '../bubbles/espacioInicial/EspacioInicialCuboG';
-import { useBox, useCompoundBody } from '@react-three/cannon';
+import { useCompoundBody } from '@react-three/cannon';
 
 const ModuloCompuestoCaminitoEscaleras = (props) => {
 

@@ -23,19 +23,16 @@ const ModuloCompuestoPuertaInteriorBajo = (props) => {
                 {
                     type: "Box",
                     args: [0.6, 2, 1.8],
-                    ...props,
                     position: [0.85, 0, -2]
                 },
                 {
                     type: "Box",
                     args: [0.6, 2, 1.8],
-                    ...props,
                     position: [0.85, 0, 2]
                 },
                 {
                     type: "Box",
                     args: [2.7, 2.4, 6],
-                    ...props,
                     position: [1.8, 2, 0]
                 }
             ]
@@ -43,7 +40,7 @@ const ModuloCompuestoPuertaInteriorBajo = (props) => {
     ));
 
     return (
-        <group ref={ref} {...props} position={props.position} dispose={null}>
+        <group ref={ref} {...props} dispose={null}>
             {/**--- Piso ---*/}
             <PisoCompuesto position={[0, -2, 0]}/>
             <EspacioInicialParedExteriorNI position={[0, 0, -2]}/>

@@ -44,7 +44,7 @@
             "action": "SET",
             "element": "AMBIENT_LIGHT",
             "props": {
-                "intensity": 0.6
+                "intensity": 0.1
             }
         },
         {
@@ -54,11 +54,11 @@
             "action": "SET",
             "element": "SPOT_LIGHT",
             "props": {
-                "position": [-100, 5, -100],
+                "position": [-100, 0, -100],
                 "target": [-80, 0, -80],
                 "angle": 1,
                 "penumbra": 0.5,
-                "intensity": 0.9,
+                "intensity": 0.6,
                 "color": "#0099FF"
             }
         },
@@ -69,11 +69,11 @@
             "action": "SET",
             "element": "SPOT_LIGHT",
             "props": {
-                "position": [40, 60, 40],
+                "position": [40, 0, 40],
                 "target": [10, 0, 10],
                 "angle": 1,
                 "penumbra": 0.5,
-                "intensity": 0.2,
+                "intensity": 0.9,
                 "color": "#FF9944"
             }
         },

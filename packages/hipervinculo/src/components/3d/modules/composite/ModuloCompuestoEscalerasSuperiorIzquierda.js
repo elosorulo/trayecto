@@ -50,7 +50,7 @@ const ModuloCompuestoEscaleras = (props) => {
                 {
                     type: "Box",
                     args:[2, 2, 4],
-                    position: [0, 0, -1]
+                    position: [0, 0, 1]
                 },
                 {
                     type: "Box",
@@ -65,9 +65,9 @@ const ModuloCompuestoEscaleras = (props) => {
         <>
         <EscaleraExteriorG ref={ref} position={stairPosition} rotation={stairRotation} absPosition={stairCoordinates.position} absRotation={stairCoordinates.rotation}/>
         <group ref={ref} {...props} position={props.position} dispose={null}>
-            <EspacioInicialCuboG position={[2, -2, 0]}/>
             <EspacioInicialCuboG position={[0, 0, 0]}/>
-            <EspacioInicialCuboG position={[0, 0, -2]}/>
+            <EspacioInicialCuboG position={[0, 0, 2]}/>
+            <EspacioInicialCuboG position={[2, -2, 0]}/>
         </group>
         </>
     )

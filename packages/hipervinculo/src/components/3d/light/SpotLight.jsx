@@ -11,12 +11,15 @@ const SpotLight = (props) => {
     
     const spotLightRef = React.useRef();
 
-    useEffect(() => {
-        spotLightRef.current.shadowDarkness = 1;
-    }, []);
-
     useFrame(({clock}, delta) => {
         if(props.update) props.update(spotLightRef, clock, delta)
+        const cam = spotLightRef.current.shadow.camera;
+        cam.near = 1;
+        cam.far = 2000;
+        cam.left = -1500;
+        cam.right = 1500;
+        cam.top = 1500;
+        cam.bottom = -1500;
     });
 
     return (
@@ -29,8 +32,8 @@ const SpotLight = (props) => {
                 ref={spotLightRef}
                 {...omit(props, "target")}
                 shadow-bias={-0.00005}
-                shadow-mapSize-width={256}
-                shadow-mapSize-height={256}
+                shadow-mapSize-width={SHADOW_MAP_SIZE}
+                shadow-mapSize-height={SHADOW_MAP_SIZE}
                 castShadow
                 target={lightTarget}
             />

@@ -35,11 +35,10 @@ const getRelativeStairPosition = (globalPosition, globalRotation) => (stairPosit
     };
 };
 
-
 const ModuloCompuestoEscaleras = (props) => {
 
-    const stairPosition = [2, 0, 0]
-    const stairRotation = [0, Math.PI, 0]
+    const stairPosition = [0, 2, -2]
+    const stairRotation = [0, 1.5 * Math.PI, 0]
     const stairCoordinates = getRelativeStairPosition(props.position ? props.position : [0, 0, 0], props.rotation ? props.rotation : [0, 0, 0])(stairPosition, stairRotation)
     
     const [ref, api] = useCompoundBody(() => (
@@ -49,13 +48,13 @@ const ModuloCompuestoEscaleras = (props) => {
                 
                 {
                     type: "Box",
-                    args:[2, 2, 4],
-                    position: [0, 0, -1]
+                    args:[4, 2, 2],
+                    position: [1, 2, 0]
                 },
                 {
                     type: "Box",
                     args:[2, 2, 2],
-                    position: [2, -2, 0]
+                    position: [0, 0, -2]
                 }
             ]
         }
@@ -63,10 +62,16 @@ const ModuloCompuestoEscaleras = (props) => {
 
     return (
         <>
-        <EscaleraExteriorG ref={ref} position={stairPosition} rotation={stairRotation} absPosition={stairCoordinates.position} absRotation={stairCoordinates.rotation}/>
+        <EscaleraExteriorG
+                ref={ref}
+                position={stairPosition}
+                rotation={stairRotation}
+                absPosition={stairCoordinates.position}
+                absRotation={stairCoordinates.rotation}
+            />
         <group ref={ref} {...props} position={props.position} dispose={null}>
-            <EspacioInicialCuboG position={[2, -2, 0]}/>
-            <EspacioInicialCuboG position={[0, 0, 0]}/>
+            <EspacioInicialCuboG position={[2, 2, 0]}/>
+            <EspacioInicialCuboG position={[0, 2, 0]}/>
             <EspacioInicialCuboG position={[0, 0, -2]}/>
         </group>
         </>

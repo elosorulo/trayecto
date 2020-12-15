@@ -27,7 +27,7 @@ function execute(){
         }
         var done = wfc.step();
         if (done){
-            wfc.expand([-size, 0,-size],[size, 3, size]);
+            wfc.expand([-size, 0,-size],[size, 5, size]);
             size=Math.ceil((size+increment)*multiply);
             expansions++;
         }

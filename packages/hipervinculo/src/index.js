@@ -5,11 +5,13 @@ import App from "./App"
 import InitialPage from './components/layout/pages/InitialPage';
 import GlobalStyle from './style/GlobalStyle';
 import { Sound } from './components/Sound';
-
+import WavesGenerator from './components/WavesGenerator';
 function Overlay() {
   const [started, set] = useState(false);
   return (
     <div className="Overlay">
+      
+      <WavesGenerator/>
       <GlobalStyle/>
       <Sound>
         {

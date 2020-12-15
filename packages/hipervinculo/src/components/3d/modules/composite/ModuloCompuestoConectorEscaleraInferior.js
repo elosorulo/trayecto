@@ -8,6 +8,7 @@ import { useBox, useCompoundBody } from '@react-three/cannon';
 import * as THREE from 'three';
 
 
+
 var targetPosition = new THREE.Vector3(); // create once an reuse it
 var targetRotation = new THREE.Quaternion();
 var eulerRotation = new THREE.Euler();
@@ -38,26 +39,14 @@ const getRelativeStairPosition = (globalPosition, globalRotation) => (stairPosit
 
 const ModuloCompuestoEscaleras = (props) => {
 
-    const stairPosition = [2, 0, 0]
-    const stairRotation = [0, Math.PI, 0]
+    const stairPosition = [2, -2, 0]
+    const stairRotation = [0, 0, 0]
     const stairCoordinates = getRelativeStairPosition(props.position ? props.position : [0, 0, 0], props.rotation ? props.rotation : [0, 0, 0])(stairPosition, stairRotation)
     
     const [ref, api] = useCompoundBody(() => (
         {
             ...props,
-            shapes: [
-                
-                {
-                    type: "Box",
-                    args:[2, 2, 4],
-                    position: [0, 0, -1]
-                },
-                {
-                    type: "Box",
-                    args:[2, 2, 2],
-                    position: [2, -2, 0]
-                }
-            ]
+            shapes: []
         }
     ));
 
@@ -65,9 +54,7 @@ const ModuloCompuestoEscaleras = (props) => {
         <>
         <EscaleraExteriorG ref={ref} position={stairPosition} rotation={stairRotation} absPosition={stairCoordinates.position} absRotation={stairCoordinates.rotation}/>
         <group ref={ref} {...props} position={props.position} dispose={null}>
-            <EspacioInicialCuboG position={[2, -2, 0]}/>
-            <EspacioInicialCuboG position={[0, 0, 0]}/>
-            <EspacioInicialCuboG position={[0, 0, -2]}/>
+            
         </group>
         </>
     )
