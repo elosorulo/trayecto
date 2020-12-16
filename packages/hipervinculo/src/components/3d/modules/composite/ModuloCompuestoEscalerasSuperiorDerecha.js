@@ -7,6 +7,7 @@ import { useBox, useCompoundBody } from '@react-three/cannon';
 
 import * as THREE from 'three';
 
+import Link from '../../links/Link';
 
 
 var geometry = new THREE.BoxGeometry(2, 2, 2);
@@ -70,6 +71,7 @@ const ModuloCompuestoEscaleras = (props) => {
             <ModuloCuboG position={[2, -2, 0]} currentBubble={props.currentBubble}/>
             <ModuloCuboG position={[0, 0, 0]} currentBubble={props.currentBubble}/>
             <ModuloCuboG position={[0, 0, -2]} currentBubble={props.currentBubble}/>
+            <Link globalPosition={props.position} globalRotation={props.rotation} position={[0, 2, 0]} currentBubble={props.currentBubble}/>
         </group>
         </>
     )

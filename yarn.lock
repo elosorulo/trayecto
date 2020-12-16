@@ -2371,14 +2371,14 @@
   resolved "https://registry.yarnpkg.com/@react-three/cannon/-/cannon-0.5.3.tgz#b1849bf240629b4293155b4e611bf4417b44281c"
   integrity sha512-/Ak6AcY4KfBMSnqOxQ2drQZVXDAAwfnUi2/PxPepz9tSAl6GC5o7H5WnDRJqXClRcw8n4Q+Dm9uSl8L5mvV96A==
 
-"@react-three/drei@^2.2.3":
-  version "2.2.7"
-  resolved "https://registry.yarnpkg.com/@react-three/drei/-/drei-2.2.7.tgz#6997cd4d3ec2fc5c2b0f9bcf0edcc48acefe25a3"
-  integrity sha512-7sMq4DUGHbkyMVnQ+6uyayoXAQXtuqBR962fAVWk+v9u3WfBD0/OV0S2bfEBCUTY08JabRpZG8isKF7L5k/M1A==
+"@react-three/drei@^2.2.12":
+  version "2.2.12"
+  resolved "https://registry.yarnpkg.com/@react-three/drei/-/drei-2.2.12.tgz#85314209f208668ee43004c340fd5177feb22fd4"
+  integrity sha512-e6ktpHFqOS5sVUlZzGuF4u7O8nUmZWH5NYPT1B2bkdM81F2JOSQajjYO+sYXYQy8Wjm0lpLrM79dLJuzEc2sOA==
   dependencies:
     "@babel/runtime" "^7.11.2"
     "@react-spring/web" "^9.0.0-rc.3"
-    detect-gpu "^1.5.1"
+    detect-gpu "^3.0.0"
     glsl-noise "^0.0.0"
     lodash.omit "^4.5.0"
     lodash.pick "^4.4.0"
@@ -5181,12 +5181,12 @@ destroy@~1.0.4:
   resolved "https://registry.yarnpkg.com/destroy/-/destroy-1.0.4.tgz#978857442c44749e4206613e37946205826abd80"
   integrity sha1-l4hXRCxEdJ5CBmE+N5RiBYJqvYA=
 
-detect-gpu@^1.5.1:
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/detect-gpu/-/detect-gpu-1.5.1.tgz#487c734334a0d41f64302cf77c7986b62aee19bc"
-  integrity sha512-Ws//qvt0Kv9uXli1xJbC4jvrJdm+KonOMBjkTkICy4Ko+6qIggOXaF567o4kpapsX+pqW9FXmxh4IIAmqB+q7Q==
+detect-gpu@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/detect-gpu/-/detect-gpu-3.0.0.tgz#d1ced721581c27fec29e24aee8c3eadf45450b5a"
+  integrity sha512-D/uxvKWDqhy7XoHHdC7By1Bzxuv0t8OwccsiW1DbRPsqOr0rTAjxdO//bSck6QS54jc9QHbaQoRczAy5KbCOCQ==
   dependencies:
-    detect-ua "^1.0.2"
+    webgl-constants "^1.1.1"
 
 detect-indent@^5.0.0:
   version "5.0.0"
@@ -5210,11 +5210,6 @@ detect-port-alt@1.1.6:
   dependencies:
     address "^1.0.1"
     debug "^2.6.0"
-
-detect-ua@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/detect-ua/-/detect-ua-1.0.2.tgz#4958d12a6af62adf522a26f0d9dec764ab3938c0"
-  integrity sha512-EsqFycxcggrkzRm3IaHr1nP1pSCDVLHW3haUvaSqws70B277a1SKk5hFtuJo3BKuPwTTRGTGsYYiJwS/97ptEg==
 
 dezalgo@^1.0.0:
   version "1.0.3"
@@ -13700,6 +13695,11 @@ uuid@^3.0.1, uuid@^3.3.2, uuid@^3.4.0:
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.4.0.tgz#b23e4358afa8a202fe7a100af1f5f883f02007ee"
   integrity sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==
 
+uuid@^8.3.2:
+  version "8.3.2"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.3.2.tgz#80d5b5ced271bb9af6c445f21a1a04c606cefbe2"
+  integrity sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==
+
 v8-compile-cache@^2.0.3:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/v8-compile-cache/-/v8-compile-cache-2.2.0.tgz#9471efa3ef9128d2f7c6a7ca39c4dd6b5055b132"
@@ -13805,6 +13805,11 @@ wcwidth@^1.0.0:
   integrity sha1-8LDc+RW8X/FSivrbLA4XtTLaL+g=
   dependencies:
     defaults "^1.0.3"
+
+webgl-constants@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/webgl-constants/-/webgl-constants-1.1.1.tgz#f9633ee87fea56647a60b9ce735cbdfb891c6855"
+  integrity sha512-LkBXKjU5r9vAW7Gcu3T5u+5cvSvh5WwINdr0C+9jpzVB41cjQAP5ePArDtk/WHYdVj0GefCgM73BA7FlIiNtdg==
 
 webidl-conversions@^4.0.2:
   version "4.0.2"

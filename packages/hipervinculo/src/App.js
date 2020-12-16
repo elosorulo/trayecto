@@ -1,6 +1,6 @@
 import React from "react"
 import { Canvas, useThree } from "react-three-fiber"
-import { Sky, PointerLockControls, OrbitControls } from "@react-three/drei"
+import { Sky, Stars,PointerLockControls, OrbitControls } from "@react-three/drei"
 import { Physics, context } from "@react-three/cannon"
 import { Ground } from "./Ground"
 import { Player } from "./Player"
@@ -15,21 +15,11 @@ import { useSoundsApi } from './components/Sound';
 import './app.css';
 import * as THREE from 'three';
 
-import ModuloCompuestoPuertaInteriorBajo from "./components/3d/modules/composite/ModuloCompuestoPuertaInteriorBajo"
-import ModuloCompuestoParedInteriorBajo from "./components/3d/modules/composite/ModuloCompuestoParedInteriorBajo"
-import ModuloCompuestoEsquinaCerradaInteriorBajo from "./components/3d/modules/composite/ModuloCompuestoEsquinaCerradaInteriorBajo";
-import ModuloCompuestoTechoInteriorBajo from "./components/3d/modules/composite/ModuloCompuestoTechoInteriorBajo";
-import ModuloCompuestoEsquinaAbiertaInteriorBajo from "./components/3d/modules/composite/ModuloCompuestoEsquinaAbiertaInteriorBajo";
-import ModuloCompuestoEscalerasSuperiorIzquierda from "./components/3d/modules/composite/ModuloCompuestoEscalerasSuperiorIzquierda";
-import ModuloCompuestoEscalerasInferiorDerecha from "./components/3d/modules/composite/ModuloCompuestoEscalerasInferiorDerecha";
-import ModuloCompuestoEscalerasInferiorIzquierda from "./components/3d/modules/composite/ModuloCompuestoEscalerasInferiorIzquierda";
-import ModuloCompuestoCaminitoEscaleras from "./components/3d/modules/composite/ModuloCompuestoCaminitoEscaleras"
-import ModuloCompuestoConectorEscaleraInferior from "./components/3d/modules/composite/ModuloCompuestoConectorEscaleraInferior";
-import ModuloCompuestoEscalerasSuperiorDerecha from "./components/3d/modules/composite/ModuloCompuestoEscalerasSuperiorDerecha";
  
 import WaveModules from "./components/WaveModules";
 import { DEEP_WEB_BUBBLE, LOBBY_BUBBLE, PIRACY_BUBBLE, CONTENT_BUBBLE, PORN_BUBBLE, INFORMATIVE_BUBBLE, SOCIAL_NETWORK_BUBBLE } from "./state/bubbles/bubblesConstants"
 import styled from "styled-components"
+import Stage from './components/3d/stages/Stage';
  
 const CharacterControls = (props) => {
     return (
@@ -40,11 +30,6 @@ const CharacterControls = (props) => {
     );
 };
 
-const Universe = (props) => {
-  return (
-      <Environment background={true} files={['sky-1.png', 'sky-2.png', 'sky-3.png', 'sky-4.png', 'sky-5.png', 'sky-6.png']} path={'/'} />
-  );
-};
 
 const LoadingScreen = styled.div`
   z-index: 5000;
@@ -73,15 +58,9 @@ export default function App(props) {
     <Canvas style={{height: "100vh", width: "100%"}} colorManagement shadowMap camera={{ fov: 90 }}>
         <Physics gravity={[0, -30, 0]} allowSleep={false}>
           <React.Suspense fallback={<Loader/>}>
-            <Universe/>
             <CharacterControls/>
+            <Stage/>
             <WaveModules/>
-            <Sky
-              sunPosition={[0, 1, 0]} // Sun position normal (defaults to inclination and azimuth if not set)
-              inclination={0} // Sun elevation angle from 0 to 1 (default=0)
-              azimuth={0.25} // Sun rotation around the Y axis from 0 to 1 (default=0.25)
-              {...props}
-            />
           </React.Suspense>
           <SpotLightsProvider/>
           <AmbientLightProvider/>

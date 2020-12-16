@@ -6,20 +6,18 @@ const spotLightsReducer = (state, action) => {
             return [
                 ...state,
                 {
-                    key: action.key,
                     ...action.props
                 }
             ];
         case types.UPDATE_SPOT_LIGHT:
             return [
-                state.filter(spotLight => spotLight.key === action.key),
+                ...state.filter(spotLight => spotLight.spotLightId !== action.props.spotLightId),
                 {
-                    key: action.key,
                     ...action.props
                 }
             ]
         case types.REMOVE_SPOT_LIGHT:
-            return state.filter(spotLight => spotLight.key === action.key);
+            return state.filter(spotLight => spotLight.spotLightId !== action.props.spotLightId);
         default:
             return state;
     }

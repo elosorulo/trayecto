@@ -8,6 +8,14 @@ import ModuloParedExteriorNS from '../bubbles/ModuloParedExteriorNS';
 import ModuloCuboG from '../bubbles/ModuloCuboG';
 import PisoCompuesto from './common/PisoCompuesto';
 import { useBox, useCompoundBody } from '@react-three/cannon';
+import LinkInicio from '../../links/LinkInicio';
+import LinkDeepWeb from '../../links/LinkDeepWeb';
+import LinkContenido from '../../links/LinkContenido';
+import LinkPirateria from '../../links/LinkPirateria';
+import LinkPorno from '../../links/LinkPorno';
+import LinkRedesSociales from '../../links/LinkRedesSociales';
+import LinkInformacion from '../../links/LinkInformacion';
+import Link from '../../links/Link';
 
 const ModuloCompuestoPuertaInteriorBajo = (props) => {
 
@@ -40,6 +48,7 @@ const ModuloCompuestoPuertaInteriorBajo = (props) => {
     ));
 
     return (
+        <>
         <group ref={ref} {...props} dispose={null}>
             {/**--- Piso ---*/}
             <PisoCompuesto position={[0, -2, 0]} currentBubble={props.currentBubble}/>
@@ -58,7 +67,9 @@ const ModuloCompuestoPuertaInteriorBajo = (props) => {
             <ModuloParedExteriorNI position={[0, 0, 2]} currentBubble={props.currentBubble}/>
             <ModuloParedExteriorNS position={[0, 2, 2]} currentBubble={props.currentBubble}/>
             <ModuloCuboG position={[2, 2, 2]} currentBubble={props.currentBubble}/>
+
         </group>
+        </>
     )
 };
 

@@ -5,6 +5,7 @@ import ModuloParedExteriorNS from '../bubbles/ModuloParedExteriorNS';
 import ModuloCuboG from '../bubbles/ModuloCuboG';
 import PisoCompuesto from './common/PisoCompuesto';
 import { useBox, useCompoundBody } from '@react-three/cannon';
+import Link from '../../links/Link';
 
 const ModuloCompuestoParedInteriorBajo = (props) => {
 
@@ -50,6 +51,8 @@ const ModuloCompuestoParedInteriorBajo = (props) => {
             <ModuloParedExteriorNI position={[0, 0, 2]} currentBubble={props.currentBubble}/>
             <ModuloParedExteriorNS position={[0, 2, 2]} currentBubble={props.currentBubble}/>
             <ModuloCuboG position={[2, 2, 2]} currentBubble={props.currentBubble}/>
+            
+            <Link globalPosition={props.position} globalRotation={props.rotation} position={[-2, 0, 0]} currentBubble={props.currentBubble}/>
         </group>
     )
 };

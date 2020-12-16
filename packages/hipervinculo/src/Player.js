@@ -1,7 +1,11 @@
 import * as THREE from "three"
-import React, { useEffect, useRef, useState } from "react"
+import React, { Suspense, useEffect, useRef, useState } from "react"
 import { useSphere } from "@react-three/cannon"
 import { useThree, useFrame } from "react-three-fiber"
+import { useStore, characterStoreApi } from './state/store';
+import * as BUBBLES from './state/bubbles/bubblesConstants';
+import { PositionalAudio } from '@react-three/drei';
+
 
 const SPEED = 5
 const keys = { KeyW: "forward", KeyS: "backward", KeyA: "left", KeyD: "right", Space: "jump" }
@@ -27,17 +31,43 @@ const usePlayerControls = () => {
 
 const delta = 0.2;
 
+const soundPrefix = "/";
+
+const soundFileExtension = ".ogg";
+
+const currentAmbientAudio = {
+
+  [BUBBLES.CONTENT_BUBBLE]: "AmbienteContenido",
+  
+  [BUBBLES.DEEP_WEB_BUBBLE]: "AmbienteDeepWeb",
+  
+  [BUBBLES.PIRACY_BUBBLE]: "AmbientePirateria",
+  
+  [BUBBLES.PORN_BUBBLE]: "AmbientePorno",
+  
+  [BUBBLES.INFORMATIVE_BUBBLE]: "AmbienteInformacion",
+  
+  [BUBBLES.LOBBY_BUBBLE]: "AmbientePorno",
+  
+  [BUBBLES.SOCIAL_NETWORK_BUBBLE]: "AmbienteRedes"
+};
+
 export const Player = (props) => {
 
   const [loading, setLoading] = useState(true);
-  const [position, setPosition] = useState([0, 30, 0]);
+  const [position, setPosition] = useState([0, 40, 0]);
+  
+  const [ currentBubble ] = useStore(state => [state.currentBubble]);
 
   const [ref, api] = useSphere(() => ({ mass: 1, type: "Dynamic", position: position, args: 0.6, ...props }))
   const { forward, backward, left, right, jump } = usePlayerControls()
   const { camera } = useThree()
   const velocity = useRef([0, 0, 0])
-  useEffect(() => void api.velocity.subscribe((v) => (velocity.current = v)), [])
-  useEffect(() => console.log(loading), [loading])
+  useEffect(() => {
+    api.velocity.subscribe((v) => (velocity.current = v))
+    api.position.subscribe(p => characterStoreApi.getState().setCharacterPosition(p));
+  }, [])
+  
   useFrame(() => {    
     if(loading && (ref.current.position.y < (position[1] - delta))) {
       setLoading(false)
@@ -52,5 +82,15 @@ export const Player = (props) => {
     api.velocity.set(direction.x, velocity.current[1], direction.z)
     if (jump && Math.abs(velocity.current[1].toFixed(2)) < 0.05) api.velocity.set(velocity.current[0], 10, velocity.current[2])
   })
-  return <mesh ref={ref} scale={[0.5, 0.5, 0.5]}/>
+  return (
+    <group ref={ref}>
+      <mesh position={[0, 3, 0]}>
+        <Suspense fallback={null}>
+          <PositionalAudio loop url={soundPrefix + currentAmbientAudio[currentBubble] + soundFileExtension} distance={0.1} />
+        </Suspense>
+      </mesh>
+      <mesh scale={[0.5, 0.5, 0.5]}>
+      </mesh>
+    </group>
+  )
 }

@@ -1,3 +1,4 @@
+import { omit, set } from 'lodash';
 import create from 'zustand';
 import { CONTENT_BUBBLE, DEEP_WEB_BUBBLE, INFORMATIVE_BUBBLE, LOBBY_BUBBLE, PIRACY_BUBBLE, PORN_BUBBLE, SOCIAL_NETWORK_BUBBLE } from './bubbles/bubblesConstants';
 import storeReducer from './reducers/storeReducer';
@@ -34,8 +35,20 @@ const initialState = {
   spheresAnimations: animation(SPHERES_AMOUNT),
   ringsAnimations: animation(RINGS_AMOUNT),
   waves: [],
-  currentBubble: CONTENT_BUBBLE
+  currentBubble: PIRACY_BUBBLE,
+  characterPosition: [0, 30, 0],
+  links: {}
 };
+
+export const [useCharacterStoreApi, characterStoreApi] = create(set => ({
+  characterPosition: [0, 30, 0],
+  setCharacterPosition: (position) => set(state => {
+      return {
+        ...state,
+        characterPosition: position
+      }
+    })
+}))
 
 export const [useStore, storeApi] = create(set => ({
     ...initialState,
@@ -50,6 +63,23 @@ export const [useStore, storeApi] = create(set => ({
       return {
         ...state,
         currentBubble: bubble
+      }
+    }),
+    addLink: (id, position) => set(state => {
+      return {
+        ...state,
+        links: {
+          ...state.links,
+          [id]: {
+            position: position
+          }
+        }
+      }
+    }),
+    removeLink: (id) => set(state => {
+      return {
+        ...state,
+        links: omit(state.links, id)    
       }
     })
 }));
