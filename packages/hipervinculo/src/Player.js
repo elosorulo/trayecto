@@ -31,7 +31,7 @@ const usePlayerControls = () => {
 
 const delta = 0.2;
 
-const soundPrefix = "/";
+const soundPrefix = "/trayecto/";
 
 const soundFileExtension = ".ogg";
 

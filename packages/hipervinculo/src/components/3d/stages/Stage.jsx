@@ -7,7 +7,7 @@ const prefix = "sky-";
 
 const extension = ".png"
 
-const path = "/";
+const path = "/trayecto/";
 
 const fileNames = {
     [BUBBLES.CONTENT_BUBBLE]: "contenido",

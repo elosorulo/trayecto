@@ -15,7 +15,7 @@ import { INFORMATIVE_BUBBLE } from '../../../state/bubbles/bubblesConstants'
 
 export default function Model(props) {
   const group = useRef()
-  const { nodes, materials, animations } = useGLTF('/LinkInformacion.gltf')
+  const { nodes, materials, animations } = useGLTF('/trayecto/LinkInformacion.gltf')
   const { actions } = useAnimations(animations, group)
 
   React.useEffect(() => {
@@ -29,7 +29,7 @@ export default function Model(props) {
     <group ref={group} {...props} dispose={null}>
       <mesh name="Cubo.137_1" material={materials['Mat.7']} geometry={nodes['Cubo.137_1'].geometry} >
         <Suspense fallback={null}>
-          <PositionalAudio loop url="/LinkInformacion.ogg"/>
+          <PositionalAudio loop url="/trayecto/LinkInformacion.ogg"/>
         </Suspense>
       </mesh>
     </group>
@@ -37,4 +37,4 @@ export default function Model(props) {
   )
 }
 
-useGLTF.preload('/LinkInformacion.gltf')
+useGLTF.preload('/trayecto/LinkInformacion.gltf')

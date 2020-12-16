@@ -15,7 +15,7 @@ import { PIRACY_BUBBLE } from '../../../state/bubbles/bubblesConstants'
 
 export default function Model(props) {
   const group = useRef()
-  const { nodes, materials, animations } = useGLTF('/LinkPirateria.gltf')
+  const { nodes, materials, animations } = useGLTF('/trayecto/LinkPirateria.gltf')
   const { actions } = useAnimations(animations, group)
 
   React.useEffect(() => {
@@ -31,7 +31,7 @@ export default function Model(props) {
       <group position={[-5, -2.2, -9.5]}>
         <mesh name="Esfera" material={materials.Mat} geometry={nodes.Esfera.geometry} rotation={[0, -1.01, 0]} >
           <Suspense fallback={null}>
-            <PositionalAudio loop url="/LinkPirateria.ogg"/>
+            <PositionalAudio loop url="/trayecto/LinkPirateria.ogg"/>
           </Suspense>
         </mesh>
       </group>
@@ -40,4 +40,4 @@ export default function Model(props) {
   )
 }
 
-useGLTF.preload('/LinkPirateria.gltf')
+useGLTF.preload('/trayecto/LinkPirateria.gltf')

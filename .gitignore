@@ -65,5 +65,4 @@ typings/
 # End of https://www.gitignore.io/api/node
 
 lib/
-
-packages/magma-hubs-bot/token.json
+packages/hipervinculo/build

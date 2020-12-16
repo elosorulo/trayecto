@@ -8,7 +8,7 @@ import { useBox } from '@react-three/cannon'
 export default function Model(props) {
   const group = useRef()
   
-  const { nodes, materials } = useGLTF('/EspacioInicialCuboG.gltf')
+  const { nodes, materials } = useGLTF('/trayecto/EspacioInicialCuboG.gltf')
   
   return (
     <group ref={group} {...props} dispose={null}>
@@ -21,4 +21,4 @@ export default function Model(props) {
   )
 }
 
-useGLTF.preload('/EspacioInicialCuboG.gltf')
+useGLTF.preload('/trayecto/EspacioInicialCuboG.gltf')

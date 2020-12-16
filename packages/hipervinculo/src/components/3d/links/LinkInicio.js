@@ -15,7 +15,7 @@ import { LOBBY_BUBBLE } from '../../../state/bubbles/bubblesConstants'
 
 export default function Model(props) {
   const group = useRef()
-  const { nodes, materials, animations } = useGLTF('/LinkInicio.gltf')
+  const { nodes, materials, animations } = useGLTF('/trayecto/LinkInicio.gltf')
   const { actions } = useAnimations(animations, group)
 
   React.useEffect(() => {
@@ -31,7 +31,7 @@ export default function Model(props) {
       <group position={[-3.2, -2.1, -12.5]}>
           <mesh name="Cubo143" material={materials['el que va']} geometry={nodes.Cubo143.geometry} >
             <Suspense fallback={null}>
-              <PositionalAudio loop url="/LinkInicial.ogg"/>
+              <PositionalAudio loop url="/trayecto/LinkInicial.ogg"/>
             </Suspense>
           </mesh>
       </group>
@@ -40,4 +40,4 @@ export default function Model(props) {
   )
 }
 
-useGLTF.preload('/LinkInicio.gltf')
+useGLTF.preload('/trayecto/LinkInicio.gltf')

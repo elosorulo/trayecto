@@ -15,7 +15,7 @@ import { SOCIAL_NETWORK_BUBBLE } from '../../../state/bubbles/bubblesConstants'
 
 export default function Model(props) {
   const group = useRef()
-  const { nodes, materials, animations } = useGLTF('/LinkRedesSociales.gltf')
+  const { nodes, materials, animations } = useGLTF('/trayecto/LinkRedesSociales.gltf')
   const { actions } = useAnimations(animations, group)
   
   React.useEffect(() => {
@@ -29,7 +29,7 @@ export default function Model(props) {
     <group ref={group} {...props} dispose={null}>
       <mesh name="Platónico" material={materials.Mat} geometry={nodes.Platónico.geometry} rotation={[-2.79, 0, 0]} >
         <Suspense fallback={null}>
-          <PositionalAudio loop url="/LinkRedesSociales.ogg"/>
+          <PositionalAudio loop url="/trayecto/LinkRedesSociales.ogg"/>
         </Suspense>
       </mesh>
     </group>
@@ -37,4 +37,4 @@ export default function Model(props) {
   )
 }
 
-useGLTF.preload('/LinkRedesSociales.gltf')
+useGLTF.preload('/trayecto/LinkRedesSociales.gltf')

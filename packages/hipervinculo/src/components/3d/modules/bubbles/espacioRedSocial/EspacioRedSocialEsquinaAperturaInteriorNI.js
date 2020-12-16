@@ -7,7 +7,7 @@ import { useGLTF } from '@react-three/drei/useGLTF'
 
 export default function Model(props) {
   const group = useRef()
-  const { nodes, materials } = useGLTF('/EspacioRedSocialEsquinaAperturaInteriorNI.gltf')
+  const { nodes, materials } = useGLTF('/trayecto/EspacioRedSocialEsquinaAperturaInteriorNI.gltf')
   return (
     <group ref={group} {...props} dispose={null}>
       <mesh material={materials.Mat} geometry={nodes.Cubo9.geometry} rotation={[0, Math.PI, 0]}/>
@@ -15,4 +15,4 @@ export default function Model(props) {
   )
 }
 
-useGLTF.preload('/EspacioRedSocialEsquinaAperturaInteriorNI.gltf')
+useGLTF.preload('/trayecto/EspacioRedSocialEsquinaAperturaInteriorNI.gltf')

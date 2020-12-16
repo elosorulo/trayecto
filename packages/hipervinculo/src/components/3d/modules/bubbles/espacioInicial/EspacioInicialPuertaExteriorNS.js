@@ -6,7 +6,7 @@ import { useGLTF } from '@react-three/drei/useGLTF'
 
 export default function Model(props) {
   const group = useRef()
-  const { nodes, materials } = useGLTF('/EspacioInicialPuertaExteriorNS.gltf')
+  const { nodes, materials } = useGLTF('/trayecto/EspacioInicialPuertaExteriorNS.gltf')
   return (
     <group ref={group} {...props} dispose={null}>
       <mesh
@@ -18,4 +18,4 @@ export default function Model(props) {
   )
 }
 
-useGLTF.preload('/EspacioInicialPuertaExteriorNS.gltf')
+useGLTF.preload('/trayecto/EspacioInicialPuertaExteriorNS.gltf')
