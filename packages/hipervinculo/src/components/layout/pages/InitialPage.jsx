@@ -13,33 +13,28 @@ import { isMobile, isTablet } from 'react-device-detect';
 
 const mobileHorizontal = !isVertical && isMobile && !isTablet;
 
-const Description = () => {
+const Description = (props) => {
     return (
+        <>
         <Grid item xs={12}>
-            <Title mobileHorizontal={mobileHorizontal}>Experimento</Title>
-            <SubTitle mobileHorizontal={mobileHorizontal}>Espacio Procedural</SubTitle>
-            <Credits mobileHorizontal={mobileHorizontal}>Manuel Strajman</Credits>
+            <Title mobileHorizontal={mobileHorizontal}>Hipervínculo</Title>
+            <SubTitle mobileHorizontal={mobileHorizontal}>Realizado por:</SubTitle>
+            <Credits mobileHorizontal={mobileHorizontal}>Agustin Cotroneo</Credits>
             <Credits mobileHorizontal={mobileHorizontal}>Esteban Sagman</Credits>
             <Credits mobileHorizontal={mobileHorizontal}>Leonel Sagman</Credits>
-            <Credits mobileHorizontal={mobileHorizontal}>Agustin Cotroneo</Credits>
+            <Credits mobileHorizontal={mobileHorizontal}>Manuel Strajman</Credits>
+            <PlayButton play={props.start} started={props.started}/>
         </Grid>
+        <Grid item xs={10}>
+        </Grid>
+        </>
     );
 };
 
 const PlayButton = (props) => {
     return (
         <StyledButton onClick={props.play}>
-            {props.started ?
-                <KeyboardArrowDownIcon
-                    fontSize="large"
-                    style={{color: fontColor}}
-                />
-                    :
-                <PlayArrowIcon
-                    fontSize="large"
-                    style={{color: fontColor}}
-                />
-            }
+            Comenzar
         </StyledButton>
     );
 };
@@ -47,10 +42,7 @@ const PlayButton = (props) => {
 const InitialPage = (props) => {
     return (
         <Grid container justify={"center"} align={"center"} spacing={mobileHorizontal ? 3 : 10}>
-            <Description/>
-            <Grid item xs={10}>
-                <PlayButton play={props.start} started={props.started}/>
-            </Grid>
+            <Description start={props.start} started={props.started}/>
         </Grid>
     );
 };

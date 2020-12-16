@@ -21,7 +21,7 @@
                 "target": [-10, 0, -10],
                 "angle": 1,
                 "penumbra": 0.5,
-                "intensity":0.9,
+                "intensity":0.7,
                 "color": "#0099FF"
             }
         },

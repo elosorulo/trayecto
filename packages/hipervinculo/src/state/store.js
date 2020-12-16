@@ -35,7 +35,7 @@ const initialState = {
   spheresAnimations: animation(SPHERES_AMOUNT),
   ringsAnimations: animation(RINGS_AMOUNT),
   waves: [],
-  currentBubble: PIRACY_BUBBLE,
+  currentBubble: LOBBY_BUBBLE,
   characterPosition: [0, 30, 0],
   links: {}
 };

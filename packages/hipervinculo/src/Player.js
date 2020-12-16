@@ -84,7 +84,7 @@ export const Player = (props) => {
   })
   return (
     <group ref={ref}>
-      <mesh position={[0, 3, 0]}>
+      <mesh position={[0, 1.8, 0]}>
         <Suspense fallback={null}>
           <PositionalAudio loop url={soundPrefix + currentAmbientAudio[currentBubble] + soundFileExtension} distance={0.1} />
         </Suspense>

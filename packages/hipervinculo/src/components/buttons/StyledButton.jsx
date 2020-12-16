@@ -20,8 +20,8 @@ const hover = (props) => !props.active ? `
   ` : "";
 
 const StyledButtonWithoutMobileSupport = styled.button`
-    border-radius: 50%;
-    padding: ${padding(0.4, 0.5)};
+    padding: ${padding(2.4, 3.5)};
+    margin: 1rem;
     border: 0.1vmax solid ${fontColor};
     box-sizing: border-box;
     &:focus {
@@ -31,6 +31,7 @@ const StyledButtonWithoutMobileSupport = styled.button`
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none; /* IE10+/Edge */
     user-select: none; /* Standard */
+    font-size: 3rem;
     position: relative;
     color: ${fontColor};
     ${props => hover(props)}
