@@ -52,12 +52,19 @@ const currentAmbientAudio = {
   [BUBBLES.SOCIAL_NETWORK_BUBBLE]: "AmbienteRedes"
 };
 
+const initialPosition = [0, 40, 0]
+
 export const Player = (props) => {
 
   const [loading, setLoading] = useState(true);
-  const [position, setPosition] = useState([0, 40, 0]);
+
+  const [position, setPosition] = useState(initialPosition);
   
   const [ currentBubble ] = useStore(state => [state.currentBubble]);
+
+  useEffect(() => {
+    api.position.set(initialPosition[0], initialPosition[1], initialPosition[2])
+  }, [currentBubble])
 
   const [ref, api] = useSphere(() => ({ mass: 1, type: "Dynamic", position: position, args: 0.6, ...props }))
   const { forward, backward, left, right, jump } = usePlayerControls()
@@ -73,7 +80,7 @@ export const Player = (props) => {
       setLoading(false)
     }
     if(ref.current.position.y <= -30) {
-      api.position.set(0, 30, 0)
+      api.position.set(initialPosition[0], initialPosition[1], initialPosition[2])
     }
     camera.position.copy(ref.current.position)
     frontVector.set(0, 0, Number(backward) - Number(forward))

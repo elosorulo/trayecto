@@ -14,7 +14,7 @@ import useLinkPosition from './useLinkPosition';
 import LinkPosition from './LinkPosition';
 import { CONTENT_BUBBLE } from '../../../state/bubbles/bubblesConstants'
 
-export default function Model(props) {
+export default React.memo((props) => {
   const group = useRef()
 
   const { nodes, materials, animations } = useGLTF('/trayecto/LinkContenido.gltf')
@@ -32,13 +32,13 @@ export default function Model(props) {
       <group position={[-3, -2.4, -7.8]}>
           <mesh name="Cubo140" material={materials.Mat} geometry={nodes.Cubo140.geometry} rotation={[0, 0.48, 0]} >
             <Suspense fallback={null}>
-              <PositionalAudio loop url="/trayecto/LinkContenido.ogg"  />
+              <PositionalAudio loop url="/trayecto/LinkContenido.ogg" distance={0.3} />
             </Suspense>
           </mesh>
       </group>
     </group>
     </>
   )
-}
+})
 
 useGLTF.preload('/trayecto/LinkContenido.gltf')

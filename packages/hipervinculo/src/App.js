@@ -38,15 +38,12 @@ const LoadingScreen = styled.div`
 
 const Loading = (props) => {
   
-    console.log("loading");
 
     return (<LoadingScreen/>);
 };
 
 function Loader() {
   const { active, progress, errors, item, loaded, total } = useProgress()
-
-  React.useEffect(() => console.log(progress), [progress])
 
   return <Html center>{progress} % loaded</Html>
 }
@@ -64,7 +61,6 @@ export default function App(props) {
           </React.Suspense>
           <SpotLightsProvider/>
           <AmbientLightProvider/>
-          <PlanesProvider/>
           <Sequencer soundsApi={soundsApi}/>
       </Physics>
     </Canvas>

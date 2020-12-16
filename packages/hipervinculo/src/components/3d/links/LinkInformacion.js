@@ -13,7 +13,7 @@ import useLinkPosition from './useLinkPosition';
 import LinkPosition from './LinkPosition';
 import { INFORMATIVE_BUBBLE } from '../../../state/bubbles/bubblesConstants'
 
-export default function Model(props) {
+export default React.memo((props) => {
   const group = useRef()
   const { nodes, materials, animations } = useGLTF('/trayecto/LinkInformacion.gltf')
   const { actions } = useAnimations(animations, group)
@@ -29,12 +29,12 @@ export default function Model(props) {
     <group ref={group} {...props} dispose={null}>
       <mesh name="Cubo.137_1" material={materials['Mat.7']} geometry={nodes['Cubo.137_1'].geometry} >
         <Suspense fallback={null}>
-          <PositionalAudio loop url="/trayecto/LinkInformacion.ogg"/>
+          <PositionalAudio loop url="/trayecto/LinkInformacion.ogg" distance={0.3}/>
         </Suspense>
       </mesh>
     </group>
     </>
   )
-}
+})
 
 useGLTF.preload('/trayecto/LinkInformacion.gltf')

@@ -13,7 +13,7 @@ import useLinkPosition from './useLinkPosition';
 import LinkPosition from './LinkPosition';
 import { PIRACY_BUBBLE } from '../../../state/bubbles/bubblesConstants'
 
-export default function Model(props) {
+export default React.memo((props) => {
   const group = useRef()
   const { nodes, materials, animations } = useGLTF('/trayecto/LinkPirateria.gltf')
   const { actions } = useAnimations(animations, group)
@@ -31,13 +31,13 @@ export default function Model(props) {
       <group position={[-5, -2.2, -9.5]}>
         <mesh name="Esfera" material={materials.Mat} geometry={nodes.Esfera.geometry} rotation={[0, -1.01, 0]} >
           <Suspense fallback={null}>
-            <PositionalAudio loop url="/trayecto/LinkPirateria.ogg"/>
+            <PositionalAudio loop url="/trayecto/LinkPirateria.ogg" distance={0.3}/>
           </Suspense>
         </mesh>
       </group>
     </group>
     </>
   )
-}
+})
 
 useGLTF.preload('/trayecto/LinkPirateria.gltf')

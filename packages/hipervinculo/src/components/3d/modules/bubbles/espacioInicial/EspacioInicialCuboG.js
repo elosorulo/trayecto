@@ -5,7 +5,7 @@ import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei/useGLTF'
 import { useBox } from '@react-three/cannon'
 
-export default function Model(props) {
+export default React.memo((props) => {
   const group = useRef()
   
   const { nodes, materials } = useGLTF('/trayecto/EspacioInicialCuboG.gltf')
@@ -19,6 +19,6 @@ export default function Model(props) {
       />
     </group>
   )
-}
+})
 
 useGLTF.preload('/trayecto/EspacioInicialCuboG.gltf')

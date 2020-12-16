@@ -40,14 +40,8 @@ const WaveModules = () => {
         state.currentBubble
     ]);
 
-    const ref = React.useRef();
-
-    React.useEffect(() => {
-        console.log(ref.current);
-    },[ref])
-
     return (
-        <group ref={ref}>
+        <group>
             {Object.keys(waves).map(waveKey => 
                 <React.Suspense fallback={null}>
                     <Module currentBubble={currentBubble} position={keyToPosition(waveKey)} index={parseInt(waves[waveKey])}/>

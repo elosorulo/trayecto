@@ -55,7 +55,6 @@ var soundApi = {
             case eventTypes.LOOP_SOUND:
                 soundFns.loop(action.props.key, action.props.loop);
             case eventTypes.STOP_SOUND:
-                console.log(action)
                 setTimeout(() => soundFns.stop(action.props.key), action.startTime * 1000);
                 break;
             case eventTypes.REMOVE_SOUND:

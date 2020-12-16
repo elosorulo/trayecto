@@ -13,7 +13,7 @@ import useLinkPosition from './useLinkPosition';
 import LinkPosition from './LinkPosition';
 import { DEEP_WEB_BUBBLE } from '../../../state/bubbles/bubblesConstants'
 
-export default function Model(props) {
+export default React.memo((props) => {
   const group = useRef()
   const { nodes, materials, animations } = useGLTF('/trayecto/LinkDeepWeb.gltf')
   const { actions } = useAnimations(animations, group)
@@ -23,7 +23,7 @@ export default function Model(props) {
   }
   ,[]);
 
-  console.log(props.position)
+
 
   return (
     <>
@@ -32,7 +32,7 @@ export default function Model(props) {
       <group position={[0, -0.5, 0]}>
         <mesh material={materials['Mat.4']} geometry={nodes.Deep_web1.geometry}>
           <Suspense fallback={null}>
-            <PositionalAudio loop url="/trayecto/LinkDeepWeb.ogg"/>
+            <PositionalAudio loop url="/trayecto/LinkDeepWeb.ogg" distance={0.3}/>
           </Suspense>
           <mesh material={materials['Mat.4']} geometry={nodes.n2.geometry} position={[0, 0.8, 0]} />
           <mesh name="n1" material={materials['Mat.4']} geometry={nodes.n1.geometry} position={[0, 0.4, 0]} />
@@ -41,6 +41,6 @@ export default function Model(props) {
     </group>
     </>
   )
-}
+})
 
 useGLTF.preload('/trayecto/LinkDeepWeb.gltf')

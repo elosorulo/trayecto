@@ -13,7 +13,7 @@ import useLinkPosition from './useLinkPosition';
 import LinkPosition from './LinkPosition';
 import { PORN_BUBBLE } from '../../../state/bubbles/bubblesConstants'
 
-export default function Model(props) {
+export default React.memo((props) => {
   const group = useRef()
   const { nodes, materials, animations } = useGLTF('/trayecto/LinkPorno.gltf')
   const { actions } = useAnimations(animations, group)
@@ -30,13 +30,13 @@ export default function Model(props) {
       <group position={[-3.1, -2.4, -10.5]}>
         <mesh name="Redes_sociales" material={materials.Mat} geometry={nodes.Redes_sociales.geometry}>
           <Suspense fallback={null}>
-            <PositionalAudio loop url="/trayecto/LinkPorno.ogg"/>
+            <PositionalAudio loop url="/trayecto/LinkPorno.ogg" distance={0.3}/>
           </Suspense>
         </mesh>
       </group>
     </group>
     </>
   )
-}
+})
 
 useGLTF.preload('/trayecto/LinkPorno.gltf')

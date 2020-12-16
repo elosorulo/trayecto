@@ -31,8 +31,6 @@ const useLinkPosition = (position, rotation, linkPosition) => {
       const id = uuidv4();
       const pos = getRelativeStairPosition(position, rotation, linkPosition);
 
-      console.log(pos);
-
       addLink(id, pos)
       return () => console.log(id);
     });
