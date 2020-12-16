@@ -29,7 +29,7 @@ export default function Model(props) {
     <group ref={group} {...props} dispose={null}>
       <mesh name="Platónico" material={materials.Mat} geometry={nodes.Platónico.geometry} rotation={[-2.79, 0, 0]} >
         <Suspense fallback={null}>
-          <PositionalAudio loop url="/trayecto/LinkRedesSociales.ogg"/>
+          <PositionalAudio loop url="/trayecto/LinkRedes.ogg"/>
         </Suspense>
       </mesh>
     </group>

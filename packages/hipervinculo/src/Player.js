@@ -47,7 +47,7 @@ const currentAmbientAudio = {
   
   [BUBBLES.INFORMATIVE_BUBBLE]: "AmbienteInformacion",
   
-  [BUBBLES.LOBBY_BUBBLE]: "AmbientePorno",
+  [BUBBLES.LOBBY_BUBBLE]: "AmbienteInicial",
   
   [BUBBLES.SOCIAL_NETWORK_BUBBLE]: "AmbienteRedes"
 };
