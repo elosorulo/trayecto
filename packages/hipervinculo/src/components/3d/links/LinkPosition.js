@@ -27,7 +27,7 @@ const bubbleListener = (pos, bubble, setCurrentBubble) => ([characterPosition]) 
     if(pos !== undefined && characterPosition !== undefined) {
 
         const deltaXZ = 0.5;
-        const deltaY = 0.5;
+        const deltaY = 0.8;
         
         if((Math.abs(pos[0] - characterPosition[0])) < deltaXZ && (Math.abs(pos[1] - characterPosition[1])) < deltaY && Math.abs(pos[2] - characterPosition[2]) < deltaXZ){
             setCurrentBubble(bubble)

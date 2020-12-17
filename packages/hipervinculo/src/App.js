@@ -52,8 +52,8 @@ export default function App(props) {
   
   const soundsApi = useSoundsApi();
   return (
-    <Canvas style={{height: "100vh", width: "100%"}} colorManagement shadowMap camera={{ fov: 90 }}>
-        <Physics gravity={[0, -30, 0]} allowSleep={false}>
+    <Canvas style={{height: "100vh", width: "100%"}} camera={{ fov: 90 }}>
+        <Physics gravity={[0, -30, 0]}>
           <React.Suspense fallback={<Loader/>}>
             <CharacterControls/>
             <Stage/>

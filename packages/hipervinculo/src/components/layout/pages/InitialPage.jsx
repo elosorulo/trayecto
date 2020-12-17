@@ -21,7 +21,7 @@ const Description = (props) => {
             <SubTitle mobileHorizontal={mobileHorizontal}>Realizado por:</SubTitle>
             <Credits mobileHorizontal={mobileHorizontal}>Agustin Cotroneo</Credits>
             <Credits mobileHorizontal={mobileHorizontal}>Esteban Sagman</Credits>
-            <Credits mobileHorizontal={mobileHorizontal}>Leonel Sagman</Credits>
+            <Credits mobileHorizontal={mobileHorizontal}>Leonel Lopez Sagman</Credits>
             <Credits mobileHorizontal={mobileHorizontal}>Manuel Strajman</Credits>
             <PlayButton play={props.start} started={props.started}/>
         </Grid>

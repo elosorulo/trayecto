@@ -54,6 +54,31 @@ const currentAmbientAudio = {
 
 const initialPosition = [0, 40, 0]
 
+const levelsMixer = (currentBubble, level) => {
+  switch(currentBubble) {
+    case BUBBLES.CONTENT_BUBBLE:
+      return level * 1.5;
+  
+    case BUBBLES.DEEP_WEB_BUBBLE:
+      return level * 1.7;
+
+    case BUBBLES.PIRACY_BUBBLE:
+      return level * 1.3;
+
+    case BUBBLES.PORN_BUBBLE:
+      return level * 1.9;
+
+    case BUBBLES.INFORMATIVE_BUBBLE:
+      return level * 1.4;
+
+    case BUBBLES.LOBBY_BUBBLE:
+      return level * 1.4;
+
+    case BUBBLES.SOCIAL_NETWORK_BUBBLE:
+      return level * 1.7;
+  }
+}
+
 export const Player = (props) => {
 
   const [loading, setLoading] = useState(true);
@@ -91,9 +116,9 @@ export const Player = (props) => {
   })
   return (
     <group ref={ref}>
-      <mesh position={[0, 1.8, 0]}>
+      <mesh position={[0, 1.15, 0]}>
         <Suspense fallback={null}>
-          <PositionalAudio loop url={soundPrefix + currentAmbientAudio[currentBubble] + soundFileExtension} distance={0.1} />
+          <PositionalAudio loop url={soundPrefix + currentAmbientAudio[currentBubble] + soundFileExtension} distance={levelsMixer(currentBubble, 0.25)} />
         </Suspense>
       </mesh>
       <mesh scale={[0.5, 0.5, 0.5]}>
