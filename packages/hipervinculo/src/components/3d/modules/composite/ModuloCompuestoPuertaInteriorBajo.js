@@ -30,12 +30,12 @@ const ModuloCompuestoPuertaInteriorBajo = (props) => {
                 },
                 {
                     type: "Box",
-                    args: [0.6, 2, 1.8],
+                    args: [0.6, 2, 2.2],
                     position: [0.85, 0, -2]
                 },
                 {
                     type: "Box",
-                    args: [0.6, 2, 1.8],
+                    args: [0.6, 2, 2.2],
                     position: [0.85, 0, 2]
                 },
                 {

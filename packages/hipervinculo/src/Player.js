@@ -100,7 +100,9 @@ export const Player = (props) => {
     api.position.subscribe(p => characterStoreApi.getState().setCharacterPosition(p));
   }, [])
   
-  useFrame(() => {    
+  useFrame(({clock}) => {    
+    const speedDelta = clock.getDelta();
+  
     if(loading && (ref.current.position.y < (position[1] - delta))) {
       setLoading(false)
     }
@@ -110,7 +112,8 @@ export const Player = (props) => {
     camera.position.copy(ref.current.position)
     frontVector.set(0, 0, Number(backward) - Number(forward))
     sideVector.set(Number(left) - Number(right), 0, 0)
-    direction.subVectors(frontVector, sideVector).normalize().multiplyScalar(SPEED).applyEuler(camera.rotation)
+    direction.subVectors(frontVector, sideVector).normalize().multiplyScalar(Math.min(0.00005, Math.max(speedDelta, 0.000005)) * 90000 * SPEED).applyEuler(camera.rotation)
+    
     api.velocity.set(direction.x, velocity.current[1], direction.z)
     if (jump && Math.abs(velocity.current[1].toFixed(2)) < 0.05) api.velocity.set(velocity.current[0], 10, velocity.current[2])
   })

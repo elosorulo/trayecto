@@ -20,13 +20,13 @@ const ModuloCompuestoEsquinaCerradaInteriorBajo = (props) => {
                 },
                 {
                     type: "Box",
-                    args:[0.6, 2, 4],
-                    position: [0.85, 0, 2.4]
+                    args:[0.6, 2, 2],
+                    position: [0.85, 0, 2]
                 },
                 {
                     type: "Box",
-                    args:[2.7, 2.4, 4.4],
-                    position: [1.8, 2, 2.4]
+                    args:[2.7, 2.4, 2],
+                    position: [1.8, 2, 2]
                 },
                 {
                     type: "Box",

@@ -61,6 +61,8 @@ function Overlay() {
                 <div>
                   <Instruction>Instrucciones:</Instruction>
                   <br/>
+                  <Instruction>Encontrá los Links para Acceder a otros mapas.</Instruction>
+                  <br/>
                   <Instruction>- W,A,S,D: Para Moverse</Instruction>
                   <br/>
                   <Instruction>- ESPACIO: Para saltar Infinitamente</Instruction>
